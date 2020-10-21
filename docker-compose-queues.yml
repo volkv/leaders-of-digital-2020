@@ -9,7 +9,7 @@ services:
     depends_on:
       - php-fpm
     volumes:
-      - ./:/var/www
+      - ./webapp:/var/www
     environment:
       CONTAINER_ROLE: scheduler
 
@@ -20,6 +20,6 @@ services:
     depends_on:
       - php-fpm
     volumes:
-      - ./:/var/www
+      - ./webapp:/var/www
     environment:
       CONTAINER_ROLE: queue-default
