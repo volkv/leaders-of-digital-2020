@@ -22,7 +22,6 @@ services:
       - 8080:443
     volumes:
       - ./webapp:/var/www
-      - ./docker/nginx/local/ssl:/etc/nginx/certificates
 
   mysql:
     image: mysql:8
