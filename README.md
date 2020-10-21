@@ -6,11 +6,17 @@ _Ресурсное управление // Разработка информа�
 **https://ncfu.volkv.com** (wip)
 ## Webapp local init:
 ```shell
+cp ./.env.example .env
+cp ./webapp/.env.example .env
 make docker-up
 make composer-install
 make npm-install
 make npm-dev
+make bash
+  php artisan storage:link
+  php artisan key:generate
 ```
+
 ```shell
 echo "127.0.0.1  ncfu.test" >> /etc/hosts
 ```

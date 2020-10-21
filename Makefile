@@ -36,3 +36,9 @@ perm:
 
 log-nginx:
 	docker logs --tail 50 -f nginx
+
+cache:
+	make exec cmd="php artisan ncfu:cache"
+
+migrate:
+	make exec cmd="php artisan migrate"
