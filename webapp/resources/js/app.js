@@ -1,16 +1,14 @@
 import Vue from 'vue'
 import store from 'vuex'
-import router from 'vue-router'
-
-
+import router from './router'
+import App from './App'
 
 /* eslint-disable no-new */
 new Vue({
         el: '#app',
-        components:
-            {
-                store,
-                router
-            }
+        components: {App},
+        template: '<app></app>',
+        store,
+        router,
     }
 )
