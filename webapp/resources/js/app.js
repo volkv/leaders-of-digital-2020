@@ -1,14 +1,23 @@
 import Vue from 'vue'
 import store from 'vuex'
 import router from './router'
+import Vuetify from 'vuetify'
 import App from './App'
 
-/* eslint-disable no-new */
+Vue.config.productionTip = false
+Vue.use(Vuetify)
+export default new Vuetify({
+    theme: {
+        dark: true
+    }
+})
+
 new Vue({
         el: '#app',
-        components: {App},
-        template: '<app></app>',
-        store,
         router,
+        store,
+        vuetify: new Vuetify(),
+        components: {App},
+        template: '<App/>'
     }
 )

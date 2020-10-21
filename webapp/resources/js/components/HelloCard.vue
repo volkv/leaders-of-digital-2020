@@ -1,13 +1,8 @@
 <template>
-<div>Hello</div>
+    <v-app>
+        <v-main>
+            Hello Card
+        </v-main>
+        <v-text-field></v-text-field>
+    </v-app>
 </template>
-
-<script>
-export default {
-    name: "HelloCard"
-}
-</script>
-
-<style scoped>
-
-</style>
