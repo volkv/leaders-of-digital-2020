@@ -19,32 +19,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-
-            <div class="navbar-brand">
-                <a class="navbar-item brand-text" href="{{route('home')}}">
-                    Главная
-                </a>
-                <div class="navbar-burger burger" data-target="navMenu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <div id="navMenu" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="{{route('login')}}">
-                        Войти
-                    </a>
-                    <a class="navbar-item" href="{{route('register')}}">
-                        Зарегистрироваться
-                    </a>
-
-                </div>
-
-            </div>
-
-    </nav>
+    @include('navbar')
     @yield('content')
 </div>
 
