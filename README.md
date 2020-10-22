@@ -12,9 +12,9 @@ make docker-up
 make composer-install
 make npm-install
 make npm-dev
-make bash
-  php artisan storage:link
-  php artisan key:generate
+php artisan storage:link
+php artisan key:generate
+  
 ```
 
 ```shell
