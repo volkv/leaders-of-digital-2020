@@ -4,7 +4,7 @@ services:
 
   php-fpm:
     image: php-fpm
-    container_name: ncfu-laravel
+    container_name: laravel
     build: ./docker/php-fpm
     volumes:
       - ./webapp:/var/www
@@ -15,18 +15,17 @@ services:
     build:
       context: ./docker/nginx
       dockerfile: prod/Dockerfile
-    container_name: ncfu-nginx
+    container_name: nginx
     depends_on:
       - php-fpm
     ports:
       - 443:443
     volumes:
       - ./webapp:/var/www
-      - ./docker/nginx/ssl:/etc/nginx/ssl
 
   mysql:
     image: mysql:8
-    container_name: ncfu-mysql
+    container_name: mysql
     restart: unless-stopped
     command: --default-authentication-plugin=mysql_native_password --innodb_buffer_pool_size=8G --innodb_buffer_pool_instances=8
     volumes:
@@ -41,7 +40,7 @@ services:
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.0
-    container_name: ncfu-elasticsearch
+    container_name: elasticsearch
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
@@ -56,7 +55,7 @@ services:
 
   redis:
     image: redis:latest
-    container_name: ncfu-redis
+    container_name: redis
 
 volumes:
   elastic:
