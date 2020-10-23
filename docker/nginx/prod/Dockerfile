@@ -9,4 +9,9 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/certi
 
 ADD prod/default.conf /etc/nginx/conf.d/default.conf
 
+ADD prod/ssl/fullchain.pem /etc/nginx/certificates
+ADD prod/ssl/privkey.pem /etc/nginx/certificates
+ADD prod/ssl/options-ssl-nginx.conf /etc/nginx/certificates
+ADD prod/ssl/ssl-dhparams.pem /etc/nginx/certificates
+
 WORKDIR /var/www
