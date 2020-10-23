@@ -25,7 +25,7 @@
 
                         <div class="field is-horizontal">
                             <div class="field-label">
-                                <label class="label">Name</label>
+                                <label class="label">Имя</label>
                             </div>
 
                             <div class="field-body">

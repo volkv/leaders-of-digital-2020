@@ -85,7 +85,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped flex">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Login</button>
+                                        <button type="submit" class="button is-primary">Войти</button>
                                     </div>
 
                                     <div class="control">
