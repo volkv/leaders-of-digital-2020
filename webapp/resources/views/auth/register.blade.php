@@ -1,115 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Регистрация
-                </h1>
-            </div>
-        </div>
-    </section>
-
-    <div class="columns is-marginless is-centered">
-        <div class="column is-5">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">Регистрация</p>
-                </header>
-
-                <div class="card-content">
-                    <form class="register-form" method="POST" action="{{ route('register') }}">
-
-                        {{ csrf_field() }}
-
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <label class="label">Имя</label>
-                            </div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <input class="input" id="name" type="name" name="name" value="{{ old('name') }}"
-                                               required autofocus>
-                                    </p>
-
-                                    @if ($errors->has('name'))
-                                        <p class="help is-danger">
-                                            {{ $errors->first('name') }}
-                                        </p>
-                                    @endif
-                                </div>
+    <div class="section container">
+        <div class="columns is-centered">
+            <div class="column is-one-third-desktop is-half-tablet">
+                <div class="box">
+                    <h3 class="has-text-centered has-text-weight-bold is-size-5 mb-2">
+                        Зарегистрироваться
+                    </h3>
+                    <p class="has-text-centered mb-2">Уже есть аккаунт? <a>Войти</a></p>
+                    <form>
+                        <div class="control has-icons-left has-icons-right mb-2">
+                            <input class="input" type="email" placeholder="Email">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" type="password" placeholder="Пароль">
+                                <span class="icon is-small is-left">
+                                  <i class="fas fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="has-text-centered mb-2">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                Согласен с политикой <a>обработки персональных данных</a>
                             </div>
                         </div>
-
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <label class="label">E-mail</label>
-                            </div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <input class="input" id="email" type="email" name="email"
-                                               value="{{ old('email') }}" required autofocus>
-                                    </p>
-
-                                    @if ($errors->has('email'))
-                                        <p class="help is-danger">
-                                            {{ $errors->first('email') }}
-                                        </p>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <label class="label">Пароль</label>
-                            </div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <input class="input" id="password" type="password" name="password" required>
-                                    </p>
-
-                                    @if ($errors->has('password'))
-                                        <p class="help is-danger">
-                                            {{ $errors->first('password') }}
-                                        </p>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <label class="label">Подтверждение</label>
-                            </div>
-
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control">
-                                        <input class="input" id="password-confirm" type="password"
-                                               name="password_confirmation" required>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal">
-                            <div class="field-label"></div>
-
-                            <div class="field-body">
-                                <div class="field is-grouped">
-                                    <div class="control">
-                                        <button type="submit" class="button is-primary">Регистрация</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="buttons is-justify-content-center">
+                            <button class="button is-primary">
+                                <strong>Зарегестрироваться</strong>
+                            </button>
                         </div>
                     </form>
                 </div>
