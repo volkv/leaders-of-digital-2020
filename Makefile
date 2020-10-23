@@ -42,3 +42,9 @@ cache:
 
 migrate:
 	make exec cmd="php artisan migrate"
+
+migrate-fresh:
+	make exec cmd="php artisan migrate:fresh"
+
+migrate-fresh-seed: migrate-fresh
+	make exec cmd="php artisan db:seed"

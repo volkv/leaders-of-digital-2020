@@ -1,0 +1,57 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Student;
+use App\Models\University;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class StudentFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Student::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $gender = rand(1,0);
+        $mediaPath = $gender ? 'f':'m';
+
+        return [
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'rating' => round (rand(10,50) / 10,2),
+            'profile_photo' => "/media/$mediaPath/" . rand(1,10),
+            'status' => $this->faker->realText(),
+            'age' => rand(16,25),
+            'city' => $this->faker->city,
+            'gender' => $gender,
+            'phone' => $this->faker->phoneNumber,
+            'course' => rand(1,5),
+            'specialty' => $this->faker->realText(50),
+            'look_for' => rand(1,3),
+            'courses' => [],
+            'achievements' => [],
+            'work_exp' => [],
+            'skills' => [],
+            'languages' => [],
+            'marks' => [],
+            'works' => [],
+            'practices' => [],
+            'tests_passed' => [],
+            'video_cv' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+            'about' => $this->faker->realText(500),
+            'university_id' => rand(1, University::latest()->first()->id) ,
+
+        ];
+    }
+}
