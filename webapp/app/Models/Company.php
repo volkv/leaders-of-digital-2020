@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Contracts\SluggableContract;
+use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -37,7 +38,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Company extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug;
+    use HasFactory, HasSlug, HasProfilePhoto;
 
     public function getSlugField(): string
     {
