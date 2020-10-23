@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,15 +18,17 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/student', function () {
-    return view('student.single');
-})->name('home');
+Route::get('/students',  [StudentController::class, 'index'])->name('students');
+Route::get('/students/{student}',  [StudentController::class, 'single'])->name('students.single');
+
 Route::get('/company', function () {
     return view('company.single');
 })->name('home');
+
 Route::get('/university', function () {
     return view('university.single');
 })->name('home');
+
 Route::get('/vacancies', function () {
     return view('vacancies.index');
 })->name('home');

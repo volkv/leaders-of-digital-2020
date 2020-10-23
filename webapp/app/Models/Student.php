@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Contracts\SluggableContract;
+use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,9 +13,10 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string $name
- * @property string $rating
- * @property string $profile_photo
  * @property string $email
+ * @property string $rating
+ * @property string $city
+ * @property string $profile_photo
  * @property string $slug
  * @property string $status
  * @property int $age
@@ -23,26 +25,29 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $course
  * @property string $specialty
  * @property int $look_for
- * @property mixed $courses
- * @property mixed $achievements
- * @property mixed $work_exp
- * @property mixed $skills
- * @property mixed $languages
- * @property mixed $marks
- * @property mixed $works
- * @property mixed $practices
- * @property mixed $tests_passed
+ * @property array $courses
+ * @property array $achievements
+ * @property array $work_exp
+ * @property array $skills
+ * @property array $languages
+ * @property array $marks
+ * @property array $works
+ * @property array $practices
+ * @property array $tests_passed
  * @property string $video_cv
  * @property string $about
  * @property int $university_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read mixed $profile_photo_url
+ * @property-read \App\Models\University $university
  * @method static \Illuminate\Database\Eloquent\Builder|Student newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Student newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Student query()
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereAbout($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereAchievements($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereAge($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Student whereCity($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereCourse($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereCourses($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereCreatedAt($value)
@@ -71,7 +76,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug;
+    use HasFactory, HasSlug, HasProfilePhoto;
 
     protected $casts = [
         'courses' => 'array',
@@ -87,6 +92,10 @@ class Student extends Model implements SluggableContract
     public function getSlugField(): string
     {
         return $this->name;
+    }
+
+    public function university() {
+        return $this->belongsTo(University::class);
     }
 
 }

@@ -25,4 +25,9 @@ trait HasSlug
             $model->slug  = $slug;
         });
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

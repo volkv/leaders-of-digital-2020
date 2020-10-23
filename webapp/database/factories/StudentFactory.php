@@ -24,13 +24,13 @@ class StudentFactory extends Factory
     public function definition()
     {
         $gender = rand(1,0);
-        $mediaPath = $gender ? 'f':'m';
+        $genderPath = $gender ? 'female':'male';
 
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->name($genderPath),
             'email' => $this->faker->unique()->safeEmail,
             'rating' => round (rand(10,50) / 10,2),
-            'profile_photo' => "/media/$mediaPath/" . rand(1,10),
+            'profile_photo' => "media/students/$genderPath/" . rand(1,10) . '.jpg',
             'status' => $this->faker->realText(),
             'age' => rand(16,25),
             'city' => $this->faker->city,
@@ -50,7 +50,7 @@ class StudentFactory extends Factory
             'tests_passed' => [],
             'video_cv' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
             'about' => $this->faker->realText(500),
-            'university_id' => rand(1, University::latest()->first()->id) ,
+            'university_id' => rand(1, University::orderByDesc('id')->first()->id) ,
 
         ];
     }

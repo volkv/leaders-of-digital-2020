@@ -14,20 +14,15 @@ class UniversityFactory extends Factory
      */
     protected $model = University::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
     public function definition()
     {
         return [
             'name' => $this->faker->company,
             'city' => $this->faker->city,
 
-            'short_name' => $this->faker->randomLetter.$this->faker->randomLetter.$this->faker->randomLetter,
+            'short_name' =>mb_strtoupper( mb_substr($this->faker->name(),1,1).mb_substr($this->faker->name(),1,1).mb_substr($this->faker->name(),1,1)),
 
-            'profile_photo' => "/media/universities/".rand(1, 2),
+            'profile_photo' => "media/universities/".rand(1, 2) . '.jpg',
         ];
     }
 }

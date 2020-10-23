@@ -23018,3 +23018,8 @@ a.has-text-danger-dark:focus {
   }
 }
 
+.profile-photo > img {
+  width: 200px;
+  height: auto;
+}
+

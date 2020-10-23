@@ -27,7 +27,7 @@ class CompanyFactory extends Factory
             'rating' => round (rand(10,50) / 10,2),
             'city' =>$this->faker->city,
             'email' =>$this->faker->email,
-            'profile_photo' => "/media/companies/" . rand(1,6),
+            'profile_photo' => "media/companies/" . rand(1,6) . '.jpg',
         ];
     }
 }

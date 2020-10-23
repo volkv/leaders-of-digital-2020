@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @property string $requirement
  * @property string $terms
+ * @property string $slug
  * @property int $company_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -25,6 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Vacancy whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Vacancy whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Vacancy whereRequirement($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vacancy whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Vacancy whereTerms($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Vacancy whereUpdatedAt($value)
  * @mixin \Eloquent

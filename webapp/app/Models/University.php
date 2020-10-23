@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * App\Models\University
  *
  * @property int $id
+ * @property string $slug
  * @property string $name
  * @property string $city
  * @property string $short_name
@@ -26,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|University whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|University whereProfilePhoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|University whereShortName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|University whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|University whereUpdatedAt($value)
  * @mixin \Eloquent
  */

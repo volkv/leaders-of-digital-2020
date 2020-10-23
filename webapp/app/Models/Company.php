@@ -16,7 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $rating
  * @property string $city
  * @property string $email
- * @property mixed $profile_photo
+ * @property string $slug
+ * @property string $profile_photo
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|Company newModelQuery()
@@ -30,6 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereProfilePhoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereRating($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Company whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereUpdatedAt($value)
  * @mixin \Eloquent
  */

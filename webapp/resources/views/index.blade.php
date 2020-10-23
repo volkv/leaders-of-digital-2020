@@ -25,9 +25,9 @@
                 </div>
             </div>
             <div class="column">
-                @include('partials.resume.list')
-                @include('partials.resume.list')
-                @include('partials.resume.list')
+                @include('partials.students.list')
+                @include('partials.students.list')
+                @include('partials.students.list')
             </div>
         </div>
     </div>
