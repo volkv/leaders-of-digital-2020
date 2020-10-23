@@ -17,6 +17,19 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/student', function () {
+    return view('student.single');
+})->name('home');
+Route::get('/company', function () {
+    return view('company.single');
+})->name('home');
+Route::get('/university', function () {
+    return view('university.single');
+})->name('home');
+Route::get('/vacancies', function () {
+    return view('vacancies.index');
+})->name('home');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
