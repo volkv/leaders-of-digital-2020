@@ -33,18 +33,20 @@
                 @if(\App\Helpers\NCFU::auth())
                     @if(App\Helpers\NCFU::authIsStudent())
                         <a class="navbar-link is-block">
-                            <p>Студент</p>
                             <p class="has-text-weight-bold">{{\App\Models\Student::first()->name}}</p>
+                            <p class="is-size-7">Компания</p>
                         </a>
                     @elseif(App\Helpers\NCFU::authIsCompany())
                         <a class="navbar-link is-block">
-                            <p>Компания</p>
+
                             <p class="has-text-weight-bold">{{\App\Models\Company::first()->name}}</p>
+                            <p class="is-size-7">Компания</p>
                         </a>
                     @elseif(App\Helpers\NCFU::authIsUniversity())
                         <a class="navbar-link is-block">
-                            <p>ВУЗ</p>
+
                             <p class="has-text-weight-bold">{{\App\Models\University::first()->name}}</p>
+                            <p class="is-size-7">ВУЗ</p>
                         </a>
                     @endif
                     <div class="navbar-dropdown">

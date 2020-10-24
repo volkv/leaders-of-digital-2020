@@ -9,7 +9,6 @@
                         Войти как
                     </h3>
 @include('auth.partials.logins-tabs')
-                    <p class="has-text-centered mb-2">Еще нет аккаунта? <a href="{{route('register')}}">Зарегистрироваться</a></p>
 
                         <div class="control has-icons-left has-icons-right mb-2">
                             <input class="input" type="email" value="test@test.demo" placeholder="Email">
