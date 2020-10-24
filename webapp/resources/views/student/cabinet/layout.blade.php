@@ -1,5 +1,7 @@
 @extends('layouts.left-menu')
 
+
+
 @section('content')
     @include('student.cabinet.profile-menu')
 

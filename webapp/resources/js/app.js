@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    if (document.getElementById('login-tabs')) {
     document.getElementById('login-tabs').onclick = function(e) {
         document.querySelectorAll('[data-login]').forEach(function (el) {
             el.parentNode.classList.remove('is-active');
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementById('login-as').value = e.target.getAttribute('data-login')
     };
-
+    }
 });
 
 

@@ -15,3 +15,4 @@
     <link rel="preload" href="/fonts/ProximaNova-Bold.woff2" as="font" crossorigin="anonymous">
 
 </head>
+@dump(\App\Helpers\NCFU::auth())
