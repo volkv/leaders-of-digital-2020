@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{ route('home') }}">
-            <img src="{{ asset('media/logo-new.svg') }}">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="{{ route('home') }}">
+            МОЙ! СТАРТ
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
            data-target="navbarBasicExample">
@@ -32,16 +32,19 @@
             <div class="navbar-item has-dropdown is-hoverable">
                 @if(\App\Helpers\NCFU::auth())
                     @if(App\Helpers\NCFU::authIsStudent())
-                        <a class="navbar-link">
-                            студент-{{\App\Models\Student::first()->name}}
+                        <a class="navbar-link is-block">
+                            <p>Студент</p>
+                            <p class="has-text-weight-bold">{{\App\Models\Student::first()->name}}</p>
                         </a>
                     @elseif(App\Helpers\NCFU::authIsCompany())
-                        <a class="navbar-link">
-                            компания-{{\App\Models\Company::first()->name}}
+                        <a class="navbar-link is-block">
+                            <p>Компания</p>
+                            <p class="has-text-weight-bold">{{\App\Models\Company::first()->name}}</p>
                         </a>
                     @elseif(App\Helpers\NCFU::authIsUniversity())
-                        <a class="navbar-link">
-                            ВУЗ-{{\App\Models\University::first()->name}}
+                        <a class="navbar-link is-block">
+                            <p>ВУЗ</p>
+                            <p class="has-text-weight-bold">{{\App\Models\University::first()->name}}</p>
                         </a>
                     @endif
                     <div class="navbar-dropdown">

@@ -27,7 +27,7 @@ class UniversityController extends Controller
     }
     public function cabinetStudents ()
     {
-        $students = Student::all();
+        $students = Student::whereUniversityId(1)->get();
         return view('university.cabinet.pages.students', compact('students')
         );
     }
