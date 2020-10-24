@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Helpers\NCFU;
+use App\Models\Application;
 use App\Models\Company;
 use App\Models\Event;
 use App\Models\JobType;
@@ -33,6 +34,7 @@ class DatabaseSeeder extends Seeder
         Company::factory(10)->create();
         Vacancy::factory(100)->create();
         Event::factory(50)->create();
+        Application::factory(100)->create();
 
         foreach (NCFU::getSpecialities() as $speciality) {
             WorkArea::create(['name' => $speciality]);

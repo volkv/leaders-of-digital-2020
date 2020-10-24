@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $company_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Application[] $applications
+ * @property-read int|null $applications_count
  * @property-read \App\Models\Company $company
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Event[] $events
  * @property-read int|null $events_count
@@ -54,8 +56,14 @@ class Vacancy extends Model implements SluggableContract
     {
        return $this->name;
     }
+
     public function company() {
-     return   $this->belongsTo(Company::class);
+        return   $this->belongsTo(Company::class);
+    }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class, 'vacancy_id','id');
     }
 
 }
