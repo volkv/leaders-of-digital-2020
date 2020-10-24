@@ -10,7 +10,7 @@
         </div>
         <div class="column is-two-thirds">
             <h3 class="has-text-weight-bold">{{ $university->name }}</h3>
-            <p class="has-text-grey">{{ $university->city }}</p>
+            <p class="has-text-grey">{{ $university->address }}</p>
             <div>
                 <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Программирование</span>
                 <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Дизайн</span>

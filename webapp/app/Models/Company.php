@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $name
  * @property string $about
  * @property string $rating
- * @property string $city
+ * @property string $address
  * @property string $email
  * @property string $slug
  * @property string $profile_photo
@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Company newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Company query()
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereAbout($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Company whereCity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Company whereAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereId($value)

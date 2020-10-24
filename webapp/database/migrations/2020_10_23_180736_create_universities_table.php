@@ -17,7 +17,9 @@ class CreateUniversitiesTable extends Migration
             $table->id();
             $table->string('slug',255)->unique();
             $table->text('name');
-            $table->text('city');
+            $table->text('address');
+            $table->text('email');
+            $table->text('phone');
             $table->text('short_name');
             $table->text('profile_photo');
 

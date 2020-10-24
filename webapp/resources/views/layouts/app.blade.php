@@ -21,9 +21,7 @@
 <div id="app" class="container">
     @include('navbar')
     <div class="container section">
-        <div class="columns is-desktop">
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
 </div>
 

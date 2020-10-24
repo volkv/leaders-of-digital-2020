@@ -34,17 +34,17 @@
         <div class="columns mb-4">
             <div class="column">
                 <div class="mb-4">
-                    <p class="has-text-weight-bold">{{ $university->city }}</p>
+                    <p class="has-text-weight-bold">{{ $university->address }}</p>
                     <p class="is-light has-text-grey">Адрес</p>
                 </div>
             </div>
             <div class="column">
                 <div class="mb-4">
-                    <p class="has-text-weight-bold">+7-925-228-22-88</p>
+                    <p class="has-text-weight-bold">{{ $university->phone }}</p>
                     <p class="is-light has-text-grey">Телефон</p>
                 </div>
                 <div>
-                    <p class="has-text-weight-bold">university@example.com</p>
+                    <p class="has-text-weight-bold">{{ $university->email }}</p>
                     <p class="is-light has-text-grey">E-mail</p>
                 </div>
             </div>
