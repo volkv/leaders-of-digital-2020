@@ -2,7 +2,7 @@
     /** @var \App\Models\University $university */
 @endphp
 
-@extends('layouts.left-menu')
+@extends('layouts.app')
 
 @section('content')
     <div class="box">

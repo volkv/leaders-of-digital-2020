@@ -20,7 +20,11 @@
 <body>
 <div id="app" class="container">
     @include('navbar')
-    @yield('content')
+    <div class="container section">
+        <div class="columns is-desktop">
+            @yield('content')
+        </div>
+    </div>
 </div>
 
 </body>
