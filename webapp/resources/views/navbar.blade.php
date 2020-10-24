@@ -20,8 +20,18 @@
                 Компании
             </a>
 
-            <a  class="navbar-item is-disabled">
+            <a href="{{route('universities')}}" class="navbar-item is-disabled">
                 ВУЗы
+            </a>
+            <a href="#" class="navbar-item">
+                ЛК студента
+            </a>
+            <a href="#" class="navbar-item">
+                ЛК компании
+            </a>
+
+            <a href="#" class="navbar-item is-disabled">
+                ЛК ВУЗа
             </a>
 
         </div>

@@ -1,3 +1,7 @@
+@php
+    /** @var \App\Models\University $university */
+@endphp
+
 @extends('layouts.left-menu')
 
 @section('content')
@@ -5,13 +9,13 @@
         <div class="columns">
             <div class="column">
                 <figure class="has-text-centered-mobile">
-                    <img src="https://via.placeholder.com/200">
+                    <img src="{{ $university->profile_photo_url }}">
                 </figure>
             </div>
             <div class="column is-two-thirds has-text-centered-mobile">
                 <div class="columns level">
                     <div class="column">
-                        <h3 class="is-size-4">СКФУ</h3>
+                        <h3 class="is-size-4">{{ $university->name }}</h3>
                     </div>
                     <div class="column">
                         <div class="has-text-centered-desktop">
@@ -30,12 +34,8 @@
         <div class="columns mb-4">
             <div class="column">
                 <div class="mb-4">
-                    <p class="has-text-weight-bold">г.Москва, ул.Пушкина, д.1</p>
+                    <p class="has-text-weight-bold">{{ $university->city }}</p>
                     <p class="is-light has-text-grey">Адрес</p>
-                </div>
-                <div>
-                    <p class="has-text-weight-bold">Lorem ipsum</p>
-                    <p class="is-light has-text-grey">Lorem</p>
                 </div>
             </div>
             <div class="column">

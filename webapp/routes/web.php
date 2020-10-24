@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UniversityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 
@@ -20,6 +21,9 @@ Route::get('/',  [HomeController::class, 'index'])->name('home');
 
 Route::get('/students',  [StudentController::class, 'index'])->name('students');
 Route::get('/students/{student}',  [StudentController::class, 'single'])->name('students.single');
+
+Route::get('/universities',  [UniversityController::class, 'index'])->name('universities');
+Route::get('/universities/{university}',  [UniversityController::class, 'single'])->name('universities.single');
 
 Route::get('/company', function () {
     return view('company.single');

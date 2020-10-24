@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Contracts\SluggableContract;
+use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
 use App\Traits\HasWorkArea;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -36,10 +37,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class University extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug, HasWorkArea;
+    use HasFactory, HasSlug, HasWorkArea, HasProfilePhoto;
 
     public function getSlugField(): string
     {
         return $this->name;
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('universities.single', ['university' => $this->slug]);
     }
 }
