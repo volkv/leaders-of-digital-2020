@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UniversityController;
+use App\Http\Controllers\VacancyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 
@@ -28,17 +29,8 @@ Route::get('/student-cabinet/companies',  [StudentController::class, 'cabinetCom
 Route::get('/universities',  [UniversityController::class, 'index'])->name('universities');
 Route::get('/universities/{university}',  [UniversityController::class, 'single'])->name('universities.single');
 
-Route::get('/company', function () {
-    return view('company.single');
-})->name('company.single');
-
-Route::get('/university', function () {
-    return view('university.single');
-})->name('university.single');
-
-Route::get('/vacancies', function () {
-    return view('vacancies.index');
-})->name('vacancies');
+Route::get('/vacancies',  [VacancyController::class, 'index'])->name('vacancies');
+Route::get('/vacancies/{vacancy}',  [VacancyController::class, 'single'])->name('vacancies.single');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

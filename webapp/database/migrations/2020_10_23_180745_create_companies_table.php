@@ -18,7 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->text('name');
             $table->text('about');
             $table->text('rating');
-            $table->text('city');
+            $table->text('address');
             $table->text('email');
             $table->string('slug',255)->unique();
 

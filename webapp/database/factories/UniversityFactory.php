@@ -19,7 +19,9 @@ class UniversityFactory extends Factory
     {
         return [
             'name' => $this->faker->company,
-            'city' => $this->faker->city,
+            'address' => $this->faker->address,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
 
             'short_name' => mb_strtoupper(NCFU::getRandomLetter().NCFU::getRandomLetter().NCFU::getRandomLetter().'У'),
 

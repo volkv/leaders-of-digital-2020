@@ -25,7 +25,7 @@ class CompanyFactory extends Factory
             'name' => $this->faker->company,
             'about' => $this->faker->realText(500),
             'rating' => round (rand(10,50) / 10,2),
-            'city' =>$this->faker->city,
+            'address' =>$this->faker->address,
             'email' =>$this->faker->email,
             'profile_photo' => "media/companies/" . rand(1,6) . '.jpg',
         ];

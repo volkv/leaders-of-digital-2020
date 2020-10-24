@@ -7,7 +7,7 @@
         </div>
         <div class="column is-two-thirds">
             <h3 class="has-text-weight-bold">{{ $company->name }}</h3>
-            <p class="has-text-grey">{{ $company->city }}</p>
+            <p class="has-text-grey">{{ $company->address }}</p>
         </div>
     </div>
 </div>
