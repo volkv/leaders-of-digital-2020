@@ -34,7 +34,7 @@
                     @if(App\Helpers\NCFU::authIsStudent())
                         <a class="navbar-link is-block">
                             <p class="has-text-weight-bold">{{\App\Models\Student::first()->name}}</p>
-                            <p class="is-size-7">Компания</p>
+                            <p class="is-size-7">Студент</p>
                         </a>
                     @elseif(App\Helpers\NCFU::authIsCompany())
                         <a class="navbar-link is-block">

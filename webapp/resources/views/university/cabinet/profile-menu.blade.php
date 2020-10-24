@@ -6,6 +6,10 @@
         <li><a class="{{Route::currentRouteName() == 'university.cabinet.index' ? 'is-active':''}}"
                href="{{route('university.cabinet.index')}}">Профиль ВУЗа</a></li>
     </ul>
+    <ul class="menu-list">
+        <li><a class="{{Route::currentRouteName() == 'university.cabinet.dashboard' ? 'is-active':''}}"
+               href="{{route('university.cabinet.dashboard')}}">Дашборд</a></li>
+    </ul>
     <p class="menu-label">
         Управление
     </p>
