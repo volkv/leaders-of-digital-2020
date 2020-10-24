@@ -34,7 +34,7 @@
                 ЛК компании
             </a>
 
-            <a href="#" class="navbar-item is-disabled">
+            <a href="{{route('university.cabinet.index')}}" class="navbar-item {{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}">
                 ЛК ВУЗа
             </a>
 
