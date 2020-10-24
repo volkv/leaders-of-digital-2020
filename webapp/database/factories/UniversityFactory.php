@@ -18,7 +18,7 @@ class UniversityFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company,
+            'name' => NCFU::getUniversityName(),
             'address' => $this->faker->address,
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,

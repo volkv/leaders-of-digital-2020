@@ -6,12 +6,13 @@ use App\Models\Company;
 use App\Models\Student;
 use App\Models\University;
 use App\Models\Vacancy;
+use App\Models\WorkArea;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
+    public function index() {
+
         $students = Student::limit(3)->get();
         $companies = Company::limit(3)->get();
         $universities = University::limit(3)->get();

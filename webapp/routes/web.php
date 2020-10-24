@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\VacancyController;
+use App\Http\Controllers\WorkAreaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 
@@ -17,6 +18,8 @@ use App\Http\Controllers\CompanyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/areas/{work_area}',  [WorkAreaController::class, 'single'])->name('workArea.single');
 
 Route::post('/',  [HomeController::class, 'login']);
 Route::get('/logout',  [HomeController::class, 'logout']);

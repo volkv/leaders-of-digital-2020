@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Contracts\SluggableContract;
+use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -30,9 +32,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class WorkArea extends Model
+class WorkArea extends Model implements SluggableContract
 {
-    use HasFactory;
+    use HasFactory, HasSlug;
 
     public function students()
     {
@@ -49,4 +51,13 @@ class WorkArea extends Model
         return $this->morphedByMany(University::class, 'work_areable', 'work_areas_morph');
     }
 
+    public function getSlugField(): string
+    {
+       return $this->name;
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('workArea.single', ['work_area' => $this->slug]);
+    }
 }
