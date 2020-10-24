@@ -14,5 +14,7 @@ class StudentController extends Controller
     }
     public function single (Student $student) {
 
+        return view('student.single', compact('student'));
+
     }
 }
