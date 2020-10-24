@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Contracts\SluggableContract;
 use App\Traits\HasSlug;
+use App\Traits\HasWorkArea;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $profile_photo
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
+ * @property-read int|null $work_areas_count
  * @method static \Illuminate\Database\Eloquent\Builder|University newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|University newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|University query()
@@ -33,7 +36,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class University extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug;
+    use HasFactory, HasSlug, HasWorkArea;
 
     public function getSlugField(): string
     {

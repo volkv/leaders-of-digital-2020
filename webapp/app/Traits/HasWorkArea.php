@@ -11,6 +11,6 @@ trait HasWorkArea
     public function workAreas()
     {
         return $this
-            ->morphToMany(WorkArea::class, 'work_areas_morph');
+            ->morphToMany(WorkArea::class,'work_areable', 'work_areas_morph');
     }
 }
