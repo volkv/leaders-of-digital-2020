@@ -88,7 +88,7 @@
 
         <div class="column">
             <h2 class="title has-text-centered is-size-5">Последние вакансии</h2>
-            @each('vacancies.partials.card', $vacancies, 'vacancies')
+            @each('vacancies.partials.card', $vacancies, 'vacancy')
         </div>
         </div>
     </div>
