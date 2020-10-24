@@ -6,8 +6,10 @@
     @include('navbar')
     <div class="container section">
         <div class="columns">
-            @yield('menu')
-            <div class="column is-two-thirds-desktop">
+            <div class="column">
+                @yield('menu')
+            </div>
+            <div class="column is-three-quarters-desktop">
                 @yield('content')
             </div>
         </div>
