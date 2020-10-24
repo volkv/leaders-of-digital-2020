@@ -6,7 +6,7 @@
             <div class="column is-one-third-desktop is-half-tablet">
                 <div class="box">
                     <h3 class="has-text-centered has-text-weight-bold is-size-5 mb-2">
-                        Войти
+                        Войти как
                     </h3>
 @include('auth.partials.logins-tabs')
                     <p class="has-text-centered mb-2">Еще нет аккаунта? <a href="{{route('register')}}">Зарегистрироваться</a></p>

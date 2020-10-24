@@ -21,21 +21,9 @@
                class="navbar-item {{Route::currentRouteName() == 'companies' ? 'is-active':''}}">
                 Компании
             </a>
-
             <a href="{{route('universities')}}"
                class="navbar-item {{Route::currentRouteName() == 'universities' ? 'is-active':''}}">
                 ВУЗы
-            </a>
-            <a href="{{route('student.cabinet.index')}}"
-               class="navbar-item {{Route::currentRouteName() == 'student.cabinet.index' ? 'is-active':''}}">
-                ЛК студента
-            </a>
-            <a href="{{route('company.cabinet.index')}}" class="navbar-item {{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}">
-                ЛК компании
-            </a>
-
-            <a href="#" class="navbar-item is-disabled">
-                ЛК ВУЗа
             </a>
 
         </div>
@@ -58,19 +46,18 @@
                     @endif
                     <div class="navbar-dropdown">
                         @if(App\Helpers\NCFU::authIsStudent())
-                            <a href="{{route('student.cabinet.index')}}" class="navbar-link">
-                                Личный кабинет
+                            <a href="{{route('student.cabinet.index')}}" class="navbar-item">
+                               Кабинет студента
                             </a>
                         @elseif(App\Helpers\NCFU::authIsCompany())
-                            <a href="{{route('company.cabinet.index')}}" class="navbar-link">
-                                Личный кабинет
+                            <a href="{{route('company.cabinet.index')}}" class="navbar-item">
+                           Кабинет работодателя
                             </a>
                         @elseif(App\Helpers\NCFU::authIsUniversity())
-                            <a href="{{route('university.cabinet.index')}}" class="navbar-link">
-                                Личный кабинет
+                            <a href="{{route('university.cabinet.index')}}" class="navbar-item">
+                              Кабинет ВУЗа
                             </a>
                         @endif
-
 
                         <hr class="navbar-divider">
                         <a href="{{route('logout')}}" class="navbar-item">
@@ -80,9 +67,7 @@
 
                 @else
                     <div class="buttons">
-                        <a class="button is-light" href="{{ route('register') }}">
-                            <strong>Зарегестрироваться</strong>
-                        </a>
+
                         <a class="button is-primary" href="{{ route('login') }}">
                             Войти
                         </a>

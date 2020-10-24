@@ -2,7 +2,7 @@
     /** @var \App\Models\Student $student */
 @endphp
 
-@extends('layouts.no-menu')
+@extends('layouts.app')
 
 @section('content')
 @include('student.partials.profile-card')

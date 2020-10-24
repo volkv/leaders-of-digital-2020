@@ -1,4 +1,4 @@
-<div class="box">
+<a href="{{ route('companies.single', ['company' => $company]) }}"  class="box">
     <div class="columns level">
         <div class="column">
             <figure class="has-text-centered-mobile">
@@ -10,4 +10,4 @@
             <p class="has-text-grey">{{ $company->address }}</p>
         </div>
     </div>
-</div>
+</a>

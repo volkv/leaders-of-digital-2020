@@ -1,10 +1,21 @@
 @extends('layouts.left-menu')
 
 @section('content')
-    <h2>Компании</h2>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Комании
+                </h1>
+                <h2 class="subtitle">
+                    Список компаний
+                </h2>
+            </div>
+        </div>
+    </section>
     @foreach($companies as $company)
-        <a href="{{ route('companies.single', ['company' => $company]) }}" class="mb-2 is-block">
+
             @include('company.partials.card', ['company' => $company])
-        </a>
+
     @endforeach
 @endsection
