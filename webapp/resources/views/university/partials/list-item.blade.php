@@ -15,9 +15,9 @@
             <h3 class="has-text-weight-bold"><a href="{{$university->url}}"> {{ $university->name }}</a></h3>
             <p class="has-text-grey">{{ $university->address }}</p>
             <div class="tags">
-                @foreach($university->workAreas as $workArea)
-                <a href="{{$workArea->url}}" class="tag is-primary is-medium mb-2 mt-2 mr-2">{{$workArea->name}}</a>
-                @endforeach
+
+                @each('work-area-tag',$university->workAreas ,'workArea' )
+
             </div>
         </div>
     </div>

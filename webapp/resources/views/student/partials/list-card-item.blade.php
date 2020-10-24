@@ -1,26 +1,34 @@
-<div class="box">
+@php
+    /** @var \App\Models\Student $student */
+@endphp
+
+<a href="{{$student->url}}" class="box">
     <div class="columns level">
+        <div class="column">
+            <figure class="profile-photo">
+                <img src="{{$student->profile_photo_url}}">
+            </figure>
+        </div>
         <div class="column is-two-thirds has-text-centered-mobile">
-            <h3 class="has-text-weight-bold">Мехтиев Руслан Самирович</h3>
-            <p class="has-text-grey">3 курс "Информационные системы и технологии"</p>
+            <h3 class="has-text-weight-bold">{{$student->name}}</h3>
+            <p class="has-text-grey">{{$student->course}} курс "{{$student->specialty}}"</p>
             <div>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Программирование</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Дизайн</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Laravel</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">JS</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Vue.js</span>
+                @foreach($student->skills as  $skill)
+                    <span class="tag is-primary is-medium mb-2 mt-2 mr-2">{{$skill}}</span>
+                @endforeach
+
             </div>
         </div>
         <div class="column has-text-centered">
             <div class="mb-2">
                 <p class="is-light">Успеваемость</p>
-                <p class="has-text-weight-bold">4,7</p>
+                <p class="has-text-weight-bold">{{$student->rating}}</p>
             </div>
             <div class="mb-2">
                 <p class="is-light">Рейтинг</p>
-                <p class="has-text-weight-bold">4,7</p>
+                <p class="has-text-weight-bold">{{$student->rating}}</p>
             </div>
-            <span class="tag is-info">Трудоустройство</span>
+            @include('job-type-tag', ['jobType'=>$student->jobType])
         </div>
     </div>
-</div>
+</a>

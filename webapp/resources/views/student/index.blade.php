@@ -15,6 +15,6 @@
         </div>
     </section>
 
-        @each('student.partials.list-item', $students, 'student')
-
+        @each('student.partials.list-card-item', $students, 'student')
+    @include('pagination')
 @endsection

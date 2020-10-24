@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UniversityController;
@@ -28,9 +29,13 @@ Route::get('/',  [HomeController::class, 'index'])->name('home');
 Route::get('/students',  [StudentController::class, 'index'])->name('students');
 Route::get('/students/{student}',  [StudentController::class, 'single'])->name('students.single');
 
+Route::get('/events',  [EventController::class, 'index'])->name('events');
+Route::get('/events/{event}',  [EventController::class, 'single'])->name('events.single');
+
 Route::get('/student-cabinet',  [StudentController::class, 'cabinet'])->name('student.cabinet.index');
 Route::get('/student-cabinet/companies',  [StudentController::class, 'cabinetCompanies'])->name('student.cabinet.companies');
 Route::get('/student-cabinet/settings',  [StudentController::class, 'cabinetSettings'])->name('student.cabinet.settings');
+Route::get('/student-cabinet/vacancies',  [StudentController::class, 'cabinetVacancies'])->name('student.cabinet.vacancies');
 
 Route::get('/universities',  [UniversityController::class, 'index'])->name('universities');
 Route::get('/universities/{university}',  [UniversityController::class, 'single'])->name('universities.single');

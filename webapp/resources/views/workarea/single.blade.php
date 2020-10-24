@@ -5,41 +5,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="box">
-        <div class="columns">
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    {{$workArea->name}}
+                </h1>
+                <h2 class="subtitle">
+                    Рабочая область
+                </h2>
+            </div>
+        </div>
+    </section>
 
-        </div>
-        <div class="columns mb-4">
-            <div class="column">
-                <div class="mb-4">
-                    <p class="has-text-weight-bold">{{ $university->address }}</p>
-                    <p class="is-light has-text-grey">Адрес</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="mb-4">
-                    <p class="has-text-weight-bold">{{ $university->phone }}</p>
-                    <p class="is-light has-text-grey">Телефон</p>
-                </div>
-                <div>
-                    <p class="has-text-weight-bold">{{ $university->email }}</p>
-                    <p class="is-light has-text-grey">E-mail</p>
-                </div>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column has-text-centered">
-                <span class="tag is-medium is-success is-light has-text-weight-bold is-size-5 mb-2">90%</span>
-                <p class="is-light has-text-grey">работающих по специальности</p>
-            </div>
-            <div class="column has-text-centered">
-                <span class="tag is-medium is-warning is-light has-text-weight-bold is-size-5 mb-2">30%</span>
-                <p class="is-light has-text-grey">состоявших на бирже труда</p>
-            </div>
-            <div class="column has-text-centered">
-                <span class="tag is-medium is-danger is-light has-text-weight-bold is-size-5 mb-2">20 тыс.</span>
-                <p class="is-light has-text-grey">средняя зарплата выпускников</p>
-            </div>
-        </div>
+
+    <div class="content">
+        <h3>Университеты</h3>
+        @each('university.partials.list-item', $universities, 'university')
     </div>
+    <div class="content">
+        <h3>Студенты</h3>
+        @each('student.partials.list-card-item', $students, 'student')
+    </div>
+    <div class="content">
+        <h3>Вакансии</h3>
+        @each('vacancy.partials.card', $vacancies, 'vacancy')
+    </div>
+    <div class="content">
+        <h3>Компании</h3>
+        @each('company.partials.card',$companies, 'company'  )
+    </div>
+
 @endsection

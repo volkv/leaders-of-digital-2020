@@ -15,6 +15,7 @@
         </div>
     </section>
 
-    @each('vacancies.partials.card', $vacancies, 'vacancy')
+    @each('vacancy.partials.card', $vacancies, 'vacancy')
 
+@include('pagination')
 @endsection
