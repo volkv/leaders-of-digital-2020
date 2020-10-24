@@ -79,23 +79,30 @@ class Student extends Model implements SluggableContract
     use HasFactory, HasSlug, HasProfilePhoto;
 
     protected $casts = [
-        'courses' => 'array',
+        'courses'      => 'array',
         'achievements' => 'array',
-        'work_exp' => 'array',
-        'skills' => 'array',
-        'languages' => 'array',
-        'marks' => 'array',
-        'works' => 'array',
-        'practices' => 'array',
+        'work_exp'     => 'array',
+        'skills'       => 'array',
+        'languages'    => 'array',
+        'marks'        => 'array',
+        'works'        => 'array',
+        'practices'    => 'array',
         'tests_passed' => 'array',
     ];
+
     public function getSlugField(): string
     {
         return $this->name;
     }
 
-    public function university() {
+    public function university()
+    {
         return $this->belongsTo(University::class);
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('students.single', ['student' => $this->slug]);
     }
 
 }

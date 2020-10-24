@@ -23,19 +23,19 @@ Route::get('/students/{student}',  [StudentController::class, 'single'])->name('
 
 Route::get('/company', function () {
     return view('company.single');
-})->name('home');
+})->name('company.single');
 
 Route::get('/university', function () {
     return view('university.single');
-})->name('home');
+})->name('university.single');
 
 Route::get('/vacancies', function () {
     return view('vacancies.index');
-})->name('home');
+})->name('vacancies');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+Route::get('/companies', [CompanyController::class, 'index'])->name('companies');
 Route::get('/companies/{company}', [CompanyController::class, 'single'])->name('companies.single');

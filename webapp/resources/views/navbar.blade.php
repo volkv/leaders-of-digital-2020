@@ -13,16 +13,17 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
-                Студенту
+            <a href="{{route('students')}}" class="navbar-item">
+                Студенты
             </a>
-
-            <a class="navbar-item">
-                ВУЗу
-            </a>
-            <a class="navbar-item">
+            <a href="{{route('companies')}}" class="navbar-item">
                 Компании
             </a>
+
+            <a  class="navbar-item is-disabled">
+                ВУЗы
+            </a>
+
         </div>
 
         <div class="navbar-end">

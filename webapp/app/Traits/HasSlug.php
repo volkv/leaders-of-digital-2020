@@ -26,6 +26,7 @@ trait HasSlug
         });
     }
 
+
     public function getRouteKeyName()
     {
         return 'slug';

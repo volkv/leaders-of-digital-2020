@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Helpers\NCFU;
 use App\Models\Student;
 use App\Models\University;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -37,7 +38,7 @@ class StudentFactory extends Factory
             'gender' => $gender,
             'phone' => $this->faker->phoneNumber,
             'course' => rand(1,5),
-            'specialty' => $this->faker->realText(50),
+            'specialty' => NCFU::getRandomSpecialty(),
             'look_for' => rand(1,3),
             'courses' => [],
             'achievements' => [],

@@ -1,7 +1,7 @@
 @php
     /** @var \App\Models\Student $student */
 @endphp
-<div class="box">
+<a href="{{$student->url}}" class="box">
     <div class="columns level is-mobile mt-2">
         <div class="column">
             <figure class="profile-photo">
@@ -15,4 +15,4 @@
         </div>
 
     </div>
-</div>
+</a>
