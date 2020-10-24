@@ -3,27 +3,16 @@
         Общее
     </p>
     <ul class="menu-list">
-        <li><a class="{{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}" href="{{route('company.cabinet.index')}}">Профиль компании</a></li>
-{{--        <li><a>Конструктор резюме</a></li>--}}
+        <li><a class="{{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}"
+               href="{{route('company.cabinet.index')}}">Профиль компании</a></li>
     </ul>
     <p class="menu-label">
         Управление
     </p>
     <ul class="menu-list">
-        <li><a  class="{{Route::currentRouteName() == 'company.cabinet.vacancies' ? 'is-active':''}}" href="{{route('company.cabinet.vacancies')}}">Вакансии</a></li>
-        <li><a class="{{Route::currentRouteName() == 'company.cabinet.applications' ? 'is-active':''}}" href="{{route('company.cabinet.applications')}}">Отклики студентов</a></li>
-{{--        <li><a>Вакансии</a></li>--}}
-{{--        <li><a>Мои отклики</a></li>--}}
-{{--        <li><a>Просмотры резюме</a></li>--}}
-{{--        <li><a>Предложения работодателей</a></li>--}}
-{{--        <li><a>Отзывы работодателей</a></li>--}}
-    </ul>
-    <p class="menu-label">
-        Прочее
-    </p>
-    <ul class="menu-list">
-{{--        <li><a>Избранное</a></li>--}}
-{{--        <li><a>Лента</a></li>--}}
-{{--        <li><a>Ассистент</a></li>--}}
+        <li><a class="{{Route::currentRouteName() == 'company.cabinet.vacancies' ? 'is-active':''}}"
+               href="{{route('company.cabinet.vacancies')}}">Вакансии</a></li>
+        <li><a class="{{Route::currentRouteName() == 'company.cabinet.applications' ? 'is-active':''}}"
+               href="{{route('company.cabinet.applications')}}">Отклики студентов</a></li>
     </ul>
 </aside>
