@@ -19,10 +19,8 @@ use App\Http\Controllers\CompanyController;
 */
 
 Route::post('/',  [HomeController::class, 'login']);
-Route::get('/logout',  [HomeController::class, 'logout'])
-;
+Route::get('/logout',  [HomeController::class, 'logout']);
 Route::get('/',  [HomeController::class, 'index'])->name('home');
-
 
 Route::get('/students',  [StudentController::class, 'index'])->name('students');
 Route::get('/students/{student}',  [StudentController::class, 'single'])->name('students.single');

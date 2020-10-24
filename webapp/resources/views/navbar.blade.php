@@ -43,17 +43,34 @@
         <div class="navbar-end">
             <div class="navbar-item has-dropdown is-hoverable">
                 @if(\App\Helpers\NCFU::auth())
-                    <a class="navbar-link">
-                        {{\App\Models\Student::first()->name}}
-                    </a>
-
+                    @if(App\Helpers\NCFU::authIsStudent())
+                        <a class="navbar-link">
+                            студент-{{\App\Models\Student::first()->name}}
+                        </a>
+                    @elseif(App\Helpers\NCFU::authIsCompany())
+                        <a class="navbar-link">
+                            компания-{{\App\Models\Company::first()->name}}
+                        </a>
+                    @elseif(App\Helpers\NCFU::authIsUniversity())
+                        <a class="navbar-link">
+                            ВУЗ-{{\App\Models\University::first()->name}}
+                        </a>
+                    @endif
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                            Настройки
-                        </a>
-                        <a class="navbar-item">
-                            Вакансии
-                        </a>
+                        @if(App\Helpers\NCFU::authIsStudent())
+                            <a href="{{route('student.cabinet.index')}}" class="navbar-link">
+                                Личный кабинет
+                            </a>
+                        @elseif(App\Helpers\NCFU::authIsCompany())
+                            <a href="{{route('company.cabinet.index')}}" class="navbar-link">
+                                Личный кабинет
+                            </a>
+                        @elseif(App\Helpers\NCFU::authIsUniversity())
+                            <a href="{{route('university.cabinet.index')}}" class="navbar-link">
+                                Личный кабинет
+                            </a>
+                        @endif
+
 
                         <hr class="navbar-divider">
                         <a href="{{route('logout')}}" class="navbar-item">

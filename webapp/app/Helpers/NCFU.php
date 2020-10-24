@@ -146,8 +146,24 @@ class NCFU
         return $output = array_slice($skills, 0, $count);
     }
 
-    static function auth() {
+    static function auth()
+    {
         return \Session::get('logged_as');
+    }
+
+    static function authIsStudent()
+    {
+        return \Session::get('logged_as') == 'student';
+    }
+
+    static function authIsCompany()
+    {
+        return \Session::get('logged_as') == 'company';
+    }
+
+    static function authIsUniversity()
+    {
+        return \Session::get('logged_as') == 'university';
     }
 
 }
