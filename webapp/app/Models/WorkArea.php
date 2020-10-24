@@ -18,10 +18,13 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Company[] $companies
  * @property-read int|null $companies_count
+ * @property-read mixed $url
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Student[] $students
  * @property-read int|null $students_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\University[] $universities
  * @property-read int|null $universities_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vacancy[] $vacancies
+ * @property-read int|null $vacancies_count
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea query()
@@ -38,17 +41,22 @@ class WorkArea extends Model implements SluggableContract
 
     public function students()
     {
-        return $this->morphedByMany(Student::class, 'work_areable', 'work_areas_morph');
+        return $this->morphedByMany(Student::class, 'work_area_morph', 'work_areas_morph');
     }
 
     public function companies()
     {
-        return $this->morphedByMany(Company::class, 'work_areable', 'work_areas_morph');
+        return $this->morphedByMany(Company::class, 'work_area_morph', 'work_areas_morph');
     }
 
     public function universities()
     {
-        return $this->morphedByMany(University::class, 'work_areable', 'work_areas_morph');
+        return $this->morphedByMany(University::class, 'work_area_morph', 'work_areas_morph');
+    }
+
+    public function vacancies()
+    {
+        return $this->morphedByMany(Vacancy::class, 'work_area_morph', 'work_areas_morph');
     }
 
     public function getSlugField(): string

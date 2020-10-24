@@ -26,8 +26,9 @@ class HomeController extends Controller
         $mapping = [
             'student'    => 'student.cabinet.index',
             'company'    => 'company.cabinet.index',
-            'university' => 'company.cabinet.index',
+            'university' => 'university.cabinet.index',
         ];
+
         \Session::put('logged_as', $request->input('login-as'));
 
         if (isset($mapping[$request->input('login-as')])) {

@@ -25,42 +25,47 @@
                class="navbar-item {{Route::currentRouteName() == 'universities' ? 'is-active':''}}">
                 ВУЗы
             </a>
+            <a href="{{route('vacancies')}}"
+               class="navbar-item {{Route::currentRouteName() == 'vacancies' ? 'is-active':''}}">
+                Вакансии
+            </a>
 
         </div>
 
         <div class="navbar-end">
             <div class="navbar-item has-dropdown is-hoverable">
                 @if(\App\Helpers\NCFU::auth())
-                    @if(App\Helpers\NCFU::authIsStudent())
+                    @if(App\Helpers\NCFU::authIsUniversity())
                         <a class="navbar-link is-block">
-                            <p class="has-text-weight-bold">{{\App\Models\Student::first()->name}}</p>
-                            <p class="is-size-7">Компания</p>
+
+                            <p class="has-text-weight-bold">{{\App\Models\University::first()->name}}</p>
+                            <p class="is-size-7">ВУЗ</p>
                         </a>
+
                     @elseif(App\Helpers\NCFU::authIsCompany())
                         <a class="navbar-link is-block">
 
                             <p class="has-text-weight-bold">{{\App\Models\Company::first()->name}}</p>
                             <p class="is-size-7">Компания</p>
                         </a>
-                    @elseif(App\Helpers\NCFU::authIsUniversity())
+                    @elseif(App\Helpers\NCFU::authIsStudent())
                         <a class="navbar-link is-block">
-
-                            <p class="has-text-weight-bold">{{\App\Models\University::first()->name}}</p>
-                            <p class="is-size-7">ВУЗ</p>
+                            <p class="has-text-weight-bold">{{\App\Models\Student::first()->name}}</p>
+                            <p class="is-size-7">Студент</p>
                         </a>
                     @endif
                     <div class="navbar-dropdown">
                         @if(App\Helpers\NCFU::authIsStudent())
                             <a href="{{route('student.cabinet.index')}}" class="navbar-item">
-                               Кабинет студента
+                                Кабинет студента
                             </a>
                         @elseif(App\Helpers\NCFU::authIsCompany())
                             <a href="{{route('company.cabinet.index')}}" class="navbar-item">
-                           Кабинет работодателя
+                                Кабинет работодателя
                             </a>
                         @elseif(App\Helpers\NCFU::authIsUniversity())
                             <a href="{{route('university.cabinet.index')}}" class="navbar-item">
-                              Кабинет ВУЗа
+                                Кабинет ВУЗа
                             </a>
                         @endif
 

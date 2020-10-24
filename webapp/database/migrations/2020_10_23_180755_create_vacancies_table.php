@@ -16,9 +16,11 @@ class CreateVacanciesTable extends Migration
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
             $table->text('city');
+            $table->text('name');
             $table->text('description');
             $table->text('requirement');
             $table->text('terms');
+            $table->unsignedBigInteger('job_type_id');
             $table->string('slug',255)->unique();
 
             $table->unsignedBigInteger('company_id');

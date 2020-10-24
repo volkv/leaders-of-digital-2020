@@ -2,6 +2,26 @@
 @import '~@creativebulma/bulma-tagsinput/src/sass/index';
 @import '~@creativebulma/bulma-badge/src/sass/index';
 
+@font-face {
+  src: local('ProximaNova'), url('/fonts/ProximaNova-Regular.woff2') format("woff2"),
+  url('/fonts/ProximaNova-Regular.woff') format("woff");
+  font-family: 'ProximaNova';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: local('ProximaNova'), url('/fonts/ProximaNova-Bold.woff2') format("woff2"),
+  url('/fonts/ProximaNova-Bold.woff') format("woff");
+  font-family: 'ProximaNova';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+body{
+  font-family:  'ProximaNova', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 .profile-photo > img {
   width: 200px;
   height: auto;

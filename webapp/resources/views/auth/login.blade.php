@@ -27,7 +27,7 @@
 
                         <form method="POST" action="/">
                             {{ csrf_field() }}
-                            <input id="login-as" name="login-as" type="text" value="student" hidden>
+                            <input id="login-as" name="login-as" type="text" value="university" hidden>
                         <div class="buttons is-justify-content-center">
                             <button type="submit" class="button is-primary">
                                 <strong>Войти</strong>

@@ -1,4 +1,4 @@
-@extends('layouts.left-menu')
+@extends('layouts.app')
 
 @section('content')
 

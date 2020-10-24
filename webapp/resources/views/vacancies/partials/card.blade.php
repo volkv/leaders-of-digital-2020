@@ -1,8 +1,12 @@
+@php
+    /** @var \App\Models\Vacancy $vacancy */
+@endphp
+
 <div class="box">
     <div class="columns">
         <div class="column is-three-quarters">
             <div>
-                <span class="tag is-info is-medium mb-2 mt-2 mr-2">Стажировка</span>
+                <span class="tag is-info is-medium mb-2 mt-2 mr-2">{{$vacancy->name}}</span>
             </div>
             <h3 class="has-text-weight-bold">Junior Web-Developer</h3>
             <p class="has-text-grey">ООО "Ромашка"</p>

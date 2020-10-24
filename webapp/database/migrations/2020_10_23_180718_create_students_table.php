@@ -32,8 +32,6 @@ class CreateStudentsTable extends Migration
             $table->text('course');
             $table->text('specialty');
 
-            $table->unsignedInteger('look_for');
-
             $table->json('courses');
             $table->json('achievements');
             $table->json('work_exp');
@@ -45,11 +43,10 @@ class CreateStudentsTable extends Migration
             $table->json('practices');
             $table->json('tests_passed');
 
-
             $table->text('video_cv');
             $table->text('about');
 
-
+            $table->unsignedBigInteger('job_type_id');
             $table->unsignedBigInteger('university_id');
 
             $table->timestamps();

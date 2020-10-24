@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Contracts\SluggableContract;
 use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
-use App\Traits\HasWorkArea;
+use App\Traits\HasWorkAreas;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -43,7 +43,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class University extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug, HasWorkArea, HasProfilePhoto;
+    use HasFactory, HasSlug, HasWorkAreas, HasProfilePhoto;
 
     public function getSlugField(): string
     {

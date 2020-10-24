@@ -39,7 +39,7 @@ class StudentFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'course' => rand(1,5),
             'specialty' => NCFU::getRandomSpecialty(),
-            'look_for' => rand(1,3),
+            'job_type_id' => rand(1,3),
             'courses' => [],
             'achievements' => [],
             'work_exp' => [],

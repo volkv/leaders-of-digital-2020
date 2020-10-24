@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Contracts\SluggableContract;
+use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string $city
- * @property string $profile_photo
  * @property string $name
  * @property string $description
  * @property int $university_id
@@ -29,13 +30,17 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Event whereProfilePhoto($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereUniversityId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Event whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Event extends Model
+class Event extends Model implements SluggableContract
 {
-    use HasFactory;
+    use HasFactory, HasSlug;
+
+    public function getSlugField(): string
+    {
+      return $this->name;
+    }
 }

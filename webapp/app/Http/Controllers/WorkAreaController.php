@@ -13,7 +13,10 @@ class WorkAreaController extends Controller
 {
     public function single(WorkArea $workArea)
     {
-dd($workArea);
+       $universities = $workArea->universities()->limit(3)->get();
+        $companies = $workArea->companies()->limit(3)->get();
+        $students = $workArea->students()->limit(3)->get();
+
         return view('home.index', compact('students','companies','universities','vacancies'));
     }
 

@@ -17,7 +17,7 @@ class CreateWorkAreasMorphTable extends Migration
             $table->id();
             $table->unsignedBigInteger('work_area_id');
             $table->foreign('work_area_id')->references('id')->on('work_areas');
-            $table->morphs('work_areable');
+            $table->morphs('work_area_morph');
         });
     }
 

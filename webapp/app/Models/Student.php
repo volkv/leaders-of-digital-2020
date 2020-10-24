@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Contracts\SluggableContract;
+use App\Traits\HasEvents;
 use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
-use App\Traits\HasWorkArea;
+use App\Traits\HasWorkAreas;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,7 +26,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $phone
  * @property string $course
  * @property string $specialty
- * @property int $look_for
  * @property array $courses
  * @property array $achievements
  * @property array $work_exp
@@ -37,10 +37,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property array $tests_passed
  * @property string $video_cv
  * @property string $about
+ * @property int $job_type_id
  * @property int $university_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Event[] $events
+ * @property-read int|null $events_count
  * @property-read mixed $profile_photo_url
+ * @property-read mixed $url
  * @property-read \App\Models\University $university
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
  * @property-read int|null $work_areas_count
@@ -57,8 +61,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereGender($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Student whereJobTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereLanguages($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Student whereLookFor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereMarks($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Student wherePhone($value)
@@ -79,7 +83,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug, HasProfilePhoto, HasWorkArea;
+    use HasFactory, HasSlug, HasProfilePhoto, HasWorkAreas, HasEvents;
 
     protected $casts = [
         'courses'      => 'array',

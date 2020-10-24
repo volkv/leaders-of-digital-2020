@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventUniversityTable extends Migration
+class CreateEventsMorphTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateEventUniversityTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_university', function (Blueprint $table) {
-            $table->unsignedBigInteger('university_id');
+        Schema::create('events_morph', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('event_id');
+            $table->foreign('event_id')->references('id')->on('events');
+            $table->morphs('event_morph');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateEventUniversityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_university');
+        Schema::dropIfExists('events_morph');
     }
 }

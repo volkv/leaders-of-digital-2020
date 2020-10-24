@@ -15,24 +15,16 @@ class SetForeignKeys extends Migration
     {
         Schema::table('students', function (Blueprint $table) {
             $table->foreign('university_id')->references('id')->on('universities')->cascadeOnDelete();
+            $table->foreign('job_type_id')->references('id')->on('job_types')->cascadeOnDelete();
         });
 
         Schema::table('vacancies', function (Blueprint $table) {
             $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete();
+            $table->foreign('job_type_id')->references('id')->on('job_types')->cascadeOnDelete();
         });
 
         Schema::table('events', function (Blueprint $table) {
             $table->foreign('university_id')->references('id')->on('universities')->cascadeOnDelete();
-        });
-
-        Schema::table('event_student', function (Blueprint $table) {
-            $table->foreign('student_id')->references('id')->on('students')->cascadeOnDelete();
-            $table->foreign('event_id')->references('id')->on('events')->cascadeOnDelete();
-        });
-
-        Schema::table('event_university', function (Blueprint $table) {
-            $table->foreign('university_id')->references('id')->on('universities')->cascadeOnDelete();
-            $table->foreign('event_id')->references('id')->on('events')->cascadeOnDelete();
         });
 
 

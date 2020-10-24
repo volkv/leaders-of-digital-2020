@@ -1,5 +1,20 @@
-@extends('layouts.left-menu')
+@extends('layouts.app')
 
 @section('content')
-@include('vacancies.partials.card')
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Вакансии
+                </h1>
+                <h2 class="subtitle">
+                    Список вакансий
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    @each('vacancies.partials.card', $vacancies, 'vacancy')
+
 @endsection
