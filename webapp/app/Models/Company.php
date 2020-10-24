@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Event[] $events
  * @property-read int|null $events_count
  * @property-read mixed $profile_photo_url
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vacancy[] $vacancies
+ * @property-read int|null $vacancies_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
  * @property-read int|null $work_areas_count
  * @method static \Illuminate\Database\Eloquent\Builder|Company newModelQuery()
@@ -49,6 +51,11 @@ class Company extends Model implements SluggableContract
 
     public function getSlugField(): string
     {
-       return $this->name;
+        return $this->name;
+    }
+
+    public function vacancies()
+    {
+        return  $this->hasMany(Vacancy::class);
     }
 }

@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Практика'],
         ]);
 
-        University::factory(50)->create();
-        Student::factory(50)->create();
-        Company::factory(50)->create();
-        Vacancy::factory(50)->create();
+        University::factory(10)->create();
+        Student::factory(100)->create();
+        Company::factory(10)->create();
+        Vacancy::factory(100)->create();
         Event::factory(50)->create();
 
         foreach (NCFU::getSpecialities() as $speciality) {

@@ -6,12 +6,11 @@
     <div class="columns">
         <div class="column is-three-quarters">
             <div>
-                <span class="tag is-info is-medium mb-2 mt-2 mr-2">{{$vacancy->name}}</span>
+                <span class="tag is-info is-medium mb-2 mt-2 mr-2">{{$vacancy->jobType->name}}</span>
             </div>
-            <h3 class="has-text-weight-bold">Junior Web-Developer</h3>
-            <p class="has-text-grey">ООО "Ромашка"</p>
-            <p>Отдел сопровождения крупной логистической компании ищет
-                студента</p>
+            <h3 class="has-text-weight-bold">{{$vacancy->name}}</h3>
+            <p class="has-text-grey">{{$vacancy->company->name}}</p>
+            <p>{{$vacancy->description}}</p>
         </div>
         @if(\App\Helpers\NCFU::auth() == 'student')
             <div class="column has-text-right">

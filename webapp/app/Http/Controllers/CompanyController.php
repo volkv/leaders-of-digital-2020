@@ -23,7 +23,7 @@ class CompanyController extends Controller
 
         $company = Company::first();
 
-        return view('company.cabinet.pages.index', compact('company'));
+        return view('company.cabinet.pages.index', compact('company','vacancies'));
 
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Contracts\SluggableContract;
 use App\Traits\HasEvents;
+use App\Traits\HasJobType;
 use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
 use App\Traits\HasWorkAreas;
@@ -45,6 +46,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $events_count
  * @property-read mixed $profile_photo_url
  * @property-read mixed $url
+ * @property-read \App\Models\JobType $jobType
  * @property-read \App\Models\University $university
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
  * @property-read int|null $work_areas_count
@@ -83,7 +85,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug, HasProfilePhoto, HasWorkAreas, HasEvents;
+    use HasFactory, HasSlug, HasProfilePhoto, HasWorkAreas, HasEvents, HasJobType;
 
     protected $casts = [
         'courses'      => 'array',
