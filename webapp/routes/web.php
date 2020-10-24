@@ -43,3 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/companies', [CompanyController::class, 'index'])->name('companies');
 Route::get('/companies/{company}', [CompanyController::class, 'single'])->name('companies.single');
+
+Route::get('/company-cabinet',  [CompanyController::class, 'cabinet'])->name('company.cabinet.index');
+Route::get('/company-cabinet/vacancies',  [CompanyController::class, 'cabinetVacancies'])->name('company.cabinet.vacancies');
+Route::get('/company-cabinet/applications',  [CompanyController::class, 'cabinetApplications'])->name('company.cabinet.applications');

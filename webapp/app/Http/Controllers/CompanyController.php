@@ -19,4 +19,27 @@ class CompanyController extends Controller
         return view('company.single', compact('company'));
     }
 
+    public function cabinet () {
+
+        $company = Company::first();
+
+        return view('company.cabinet.pages.index', compact('company'));
+
+    }
+
+    public function cabinetVacancies ()
+    {
+        //        $company = Company::first();
+
+        return view('company.cabinet.pages.vacancies'
+        );
+    }
+
+    public function cabinetApplications ()
+    {
+        //        $company = Company::first();
+
+        return view('company.cabinet.pages.applications'
+        );
+    }
 }
