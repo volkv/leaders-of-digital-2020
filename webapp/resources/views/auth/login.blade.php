@@ -8,28 +8,34 @@
                     <h3 class="has-text-centered has-text-weight-bold is-size-5 mb-2">
                         Войти
                     </h3>
-                    <p class="has-text-centered mb-2">Еще нет аккаунта? <a>Зарегистрироваться</a></p>
-                    <form>
+@include('auth.partials.logins-tabs')
+                    <p class="has-text-centered mb-2">Еще нет аккаунта? <a href="{{route('register')}}">Зарегистрироваться</a></p>
+
                         <div class="control has-icons-left has-icons-right mb-2">
-                            <input class="input" type="email" placeholder="Email">
+                            <input class="input" type="email" value="test@test.demo" placeholder="Email">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
                             </span>
                         </div>
                         <div class="field">
                             <p class="control has-icons-left">
-                                <input class="input" type="password" placeholder="Пароль">
+                                <input class="input" type="password" value="test" placeholder="Пароль">
                                 <span class="icon is-small is-left">
                                   <i class="fas fa-lock"></i>
                                 </span>
                             </p>
                         </div>
+
+                        <form method="POST" action="/">
+                            {{ csrf_field() }}
+                            <input id="login-as" name="login-as" type="text" value="student" hidden>
                         <div class="buttons is-justify-content-center">
-                            <button class="button is-primary">
+                            <button type="submit" class="button is-primary">
                                 <strong>Войти</strong>
                             </button>
                         </div>
-                    </form>
+                        </form>
+
                 </div>
             </div>
         </div>

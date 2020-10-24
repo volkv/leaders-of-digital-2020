@@ -43,7 +43,7 @@ class StudentFactory extends Factory
             'courses' => [],
             'achievements' => [],
             'work_exp' => [],
-            'skills' => [],
+            'skills' => NCFU::getRandomSkills(rand(2,6)),
             'languages' => [],
             'marks' => [],
             'works' => [],

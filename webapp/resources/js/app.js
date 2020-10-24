@@ -24,11 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-    
+
+    document.getElementById('login-tabs').onclick = function(e) {
+        document.querySelectorAll('[data-login]').forEach(function (el) {
+            el.parentNode.classList.remove('is-active');
+        });
+
+        e.target.parentNode.classList.add("is-active");
+
+        document.getElementById('login-as').value = e.target.getAttribute('data-login')
+    };
+
 });
 
-
-require('./bulma-extensions');
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 

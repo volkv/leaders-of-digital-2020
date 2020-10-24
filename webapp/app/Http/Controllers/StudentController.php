@@ -35,4 +35,12 @@ class StudentController extends Controller
         return view('student.cabinet.pages.companies', compact('student', 'companies'));
 
     }
+
+    public function cabinetSettings () {
+
+        $student = Student::first();
+
+        return view('student.cabinet.pages.settings', compact('student'));
+
+    }
 }

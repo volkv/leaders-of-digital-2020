@@ -170,6 +170,7 @@
   width: 32px;
 }
 
+.tags-input .dropdown-menu .dropdown-content.is-loading::after,
 .control.is-loading::after,
 .select.is-loading::after,
 .loader,
@@ -236,6 +237,7 @@
 .pagination-ellipsis,
 .file-cta,
 .file-name,
+.tags-input,
 .select select,
 .textarea,
 .input,
@@ -265,6 +267,7 @@
 .pagination-ellipsis:focus,
 .file-cta:focus,
 .file-name:focus,
+.tags-input:focus,
 .select select:focus,
 .textarea:focus,
 .input:focus,
@@ -275,6 +278,7 @@
 .is-focused.pagination-ellipsis,
 .is-focused.file-cta,
 .is-focused.file-name,
+.is-focused.tags-input,
 .select select.is-focused,
 .is-focused.textarea,
 .is-focused.input,
@@ -285,6 +289,7 @@
 .pagination-ellipsis:active,
 .file-cta:active,
 .file-name:active,
+.tags-input:active,
 .select select:active,
 .textarea:active,
 .input:active,
@@ -295,6 +300,7 @@
 .is-active.pagination-ellipsis,
 .is-active.file-cta,
 .is-active.file-name,
+.is-active.tags-input,
 .select select.is-active,
 .is-active.textarea,
 .is-active.input,
@@ -308,6 +314,7 @@
 [disabled].pagination-ellipsis,
 [disabled].file-cta,
 [disabled].file-name,
+[disabled].tags-input,
 .select select[disabled],
 [disabled].textarea,
 [disabled].input,
@@ -318,6 +325,7 @@ fieldset[disabled] .pagination-link,
 fieldset[disabled] .pagination-ellipsis,
 fieldset[disabled] .file-cta,
 fieldset[disabled] .file-name,
+fieldset[disabled] .tags-input,
 fieldset[disabled] .select select,
 .select fieldset[disabled] select,
 fieldset[disabled] .textarea,
@@ -3546,6 +3554,7 @@ a.tag:hover {
 
 /* Bulma Form */
 
+.tags-input,
 .select select,
 .textarea,
 .input {
@@ -3555,48 +3564,58 @@ a.tag:hover {
   color: #363636;
 }
 
+.tags-input::-moz-placeholder,
 .select select::-moz-placeholder,
 .textarea::-moz-placeholder,
 .input::-moz-placeholder {
   color: rgba(54, 54, 54, 0.3);
 }
 
+.tags-input::-webkit-input-placeholder,
 .select select::-webkit-input-placeholder,
 .textarea::-webkit-input-placeholder,
 .input::-webkit-input-placeholder {
   color: rgba(54, 54, 54, 0.3);
 }
 
+.tags-input:-moz-placeholder,
 .select select:-moz-placeholder,
 .textarea:-moz-placeholder,
 .input:-moz-placeholder {
   color: rgba(54, 54, 54, 0.3);
 }
 
+.tags-input:-ms-input-placeholder,
 .select select:-ms-input-placeholder,
 .textarea:-ms-input-placeholder,
 .input:-ms-input-placeholder {
   color: rgba(54, 54, 54, 0.3);
 }
 
+.tags-input:hover,
 .select select:hover,
 .textarea:hover,
 .input:hover,
+.is-hovered.tags-input,
 .select select.is-hovered,
 .is-hovered.textarea,
 .is-hovered.input {
   border-color: #b5b5b5;
 }
 
+.tags-input:focus,
 .select select:focus,
 .textarea:focus,
 .input:focus,
+.is-focused.tags-input,
 .select select.is-focused,
 .is-focused.textarea,
 .is-focused.input,
+.tags-input:active,
 .select select:active,
 .textarea:active,
 .input:active,
+.is-active.tags-input,
 .select select.is-active,
 .is-active.textarea,
 .is-active.input {
@@ -3604,9 +3623,11 @@ a.tag:hover {
   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
 }
 
+[disabled].tags-input,
 .select select[disabled],
 [disabled].textarea,
 [disabled].input,
+fieldset[disabled] .tags-input,
 fieldset[disabled] .select select,
 .select fieldset[disabled] select,
 fieldset[disabled] .textarea,
@@ -3617,9 +3638,11 @@ fieldset[disabled] .input {
   color: #7a7a7a;
 }
 
+[disabled].tags-input::-moz-placeholder,
 .select select[disabled]::-moz-placeholder,
 [disabled].textarea::-moz-placeholder,
 [disabled].input::-moz-placeholder,
+fieldset[disabled] .tags-input::-moz-placeholder,
 fieldset[disabled] .select select::-moz-placeholder,
 .select fieldset[disabled] select::-moz-placeholder,
 fieldset[disabled] .textarea::-moz-placeholder,
@@ -3627,9 +3650,11 @@ fieldset[disabled] .input::-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
+[disabled].tags-input::-webkit-input-placeholder,
 .select select[disabled]::-webkit-input-placeholder,
 [disabled].textarea::-webkit-input-placeholder,
 [disabled].input::-webkit-input-placeholder,
+fieldset[disabled] .tags-input::-webkit-input-placeholder,
 fieldset[disabled] .select select::-webkit-input-placeholder,
 .select fieldset[disabled] select::-webkit-input-placeholder,
 fieldset[disabled] .textarea::-webkit-input-placeholder,
@@ -3637,9 +3662,11 @@ fieldset[disabled] .input::-webkit-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
+[disabled].tags-input:-moz-placeholder,
 .select select[disabled]:-moz-placeholder,
 [disabled].textarea:-moz-placeholder,
 [disabled].input:-moz-placeholder,
+fieldset[disabled] .tags-input:-moz-placeholder,
 fieldset[disabled] .select select:-moz-placeholder,
 .select fieldset[disabled] select:-moz-placeholder,
 fieldset[disabled] .textarea:-moz-placeholder,
@@ -3647,9 +3674,11 @@ fieldset[disabled] .input:-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
+[disabled].tags-input:-ms-input-placeholder,
 .select select[disabled]:-ms-input-placeholder,
 [disabled].textarea:-ms-input-placeholder,
 [disabled].input:-ms-input-placeholder,
+fieldset[disabled] .tags-input:-ms-input-placeholder,
 fieldset[disabled] .select select:-ms-input-placeholder,
 .select fieldset[disabled] select:-ms-input-placeholder,
 fieldset[disabled] .textarea:-ms-input-placeholder,
@@ -23018,8 +23047,257 @@ a.has-text-danger-dark:focus {
   }
 }
 
+.tags-input {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 2.5em;
+  padding: 0;
+  position: relative;
+}
+
+.tags-input .tag {
+  font-size: 1rem;
+  margin: 0.1rem;
+}
+
+.tags-input .tag:hover {
+  cursor: pointer;
+}
+
+.tags-input .tag.is-selected {
+  background-color: #00d1b2;
+  color: #fff;
+}
+
+.tags-input .tag.is-duplicate {
+  -webkit-animation: blinker 0.75s linear infinite;
+          animation: blinker 0.75s linear infinite;
+}
+
+.tags-input .input {
+  border-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  flex: 1 0 auto;
+  height: 2.3rem;
+  margin: 0.1rem;
+  width: auto;
+}
+
+.tags-input.is-filter input {
+  color: rgba(54, 54, 54, 0.3);
+}
+
+.tags-input.is-filter input::-moz-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+}
+
+.tags-input.is-filter input::-webkit-input-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+}
+
+.tags-input.is-filter input:-moz-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+}
+
+.tags-input.is-filter input:-ms-input-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+}
+
+.tags-input.no-input input {
+  color: transparent;
+  text-shadow: 0 0 0 rgba(54, 54, 54, 0.3);
+}
+
+.tags-input.no-input input::-moz-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+  text-shadow: none;
+}
+
+.tags-input.no-input input::-webkit-input-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+  text-shadow: none;
+}
+
+.tags-input.no-input input:-moz-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+  text-shadow: none;
+}
+
+.tags-input.no-input input:-ms-input-placeholder {
+  color: rgba(54, 54, 54, 0.3);
+  text-shadow: none;
+}
+
+.tags-input .dropdown-menu {
+  width: 100%;
+}
+
+.tags-input .dropdown-menu .dropdown-content {
+  max-height: 250px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.tags-input .dropdown-menu .dropdown-content.is-loading::after {
+  left: 50%;
+  position: absolute !important;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.tags-input .dropdown-menu .dropdown-content.is-loading::before {
+  background-color: rgba(245, 245, 245, 0.5);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.tags-input .dropdown-menu .dropdown-item:not(.empty-title):hover {
+  cursor: pointer;
+}
+
+.tags-input .dropdown-menu .dropdown-item.empty-title {
+  color: #7a7a7a;
+  text-align: center;
+}
+
+.tags-input .dropdown-menu .dropdown-item.empty-title:hover {
+  background: inherit;
+  color: #7a7a7a;
+}
+
+.tags-input .dropdown-menu .dropdown-item mark.is-highlighted {
+  background-color: #ffdd57;
+}
+
+.tags-input.is-small .tag {
+  font-size: 0.75rem;
+}
+
+.tags-input.is-small .input {
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+
+.tags-input.is-medium .tag {
+  font-size: 1.25rem;
+}
+
+.tags-input.is-medium .input {
+  font-size: 1.25rem;
+}
+
+.tags-input.is-large .tag {
+  font-size: 1.5rem;
+}
+
+.tags-input.is-large .input {
+  font-size: 1.5rem;
+}
+
+.tags-input.is-disabled,
+.tags-input[disabled] {
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  box-shadow: none;
+  color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+.tags-input.is-disabled .tag,
+.tags-input[disabled] .tag {
+  background-color: ligthen(whitesmoke, 5%);
+  color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+.tags-input.is-disabled .tag .delete,
+.tags-input[disabled] .tag .delete {
+  background-color: #e8e8e8;
+  border-color: #e8e8e8;
+  box-shadow: none;
+  color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+.tags-input.is-disabled .input,
+.tags-input[disabled] .input {
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  box-shadow: none;
+  color: #7a7a7a;
+}
+
+.tags-input.is-disabled .input::-moz-placeholder,
+.tags-input[disabled] .input::-moz-placeholder {
+  color: rgba(122, 122, 122, 0.3);
+}
+
+.tags-input.is-disabled .input::-webkit-input-placeholder,
+.tags-input[disabled] .input::-webkit-input-placeholder {
+  color: rgba(122, 122, 122, 0.3);
+}
+
+.tags-input.is-disabled .input:-moz-placeholder,
+.tags-input[disabled] .input:-moz-placeholder {
+  color: rgba(122, 122, 122, 0.3);
+}
+
+.tags-input.is-disabled .input:-ms-input-placeholder,
+.tags-input[disabled] .input:-ms-input-placeholder {
+  color: rgba(122, 122, 122, 0.3);
+}
+
+.tags-input[readonly] .input {
+  box-shadow: none;
+}
+
+.tags-input.is-active .dropdown-menu {
+  display: block;
+}
+
+@-webkit-keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .profile-photo > img {
   width: 200px;
   height: auto;
+}
+
+.navbar-item img {
+  width: 40px;
 }
 

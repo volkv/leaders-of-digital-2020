@@ -2,6 +2,6 @@
 
 @section('content')
 
-@include('student.single')
+@include('student.partials.profile-card')
 
 @endsection

@@ -1,6 +1,10 @@
 @import "bulma";
-
+@import '~@creativebulma/bulma-tagsinput/src/sass/index';
 .profile-photo > img {
   width: 200px;
   height: auto;
+}
+
+.navbar-item img {
+  width: 40px;
 }

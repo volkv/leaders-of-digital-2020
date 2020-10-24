@@ -125,6 +125,29 @@ class NCFU
         return $specialies[array_rand($specialies)];
     }
 
+    static function getRandomSkills($count = 3): array
+    {
+        $skills = [
+            'Быстрая обучаемость',
+            'Желание познавать новое',
+            'Пунктуальность',
+            'Внимательность',
+            'Ответсвенность',
+            'Программирование',
+            'Дизайн',
+            'Laravel',
+            'Javascript',
+            'Vue.js',
 
+        ];
+
+        shuffle($skills);
+
+        return $output = array_slice($skills, 0, $count);
+    }
+
+    static function auth() {
+        return \Session::get('logged_as');
+    }
 
 }

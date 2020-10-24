@@ -8,7 +8,8 @@
                     <h3 class="has-text-centered has-text-weight-bold is-size-5 mb-2">
                         Зарегистрироваться
                     </h3>
-                    <p class="has-text-centered mb-2">Уже есть аккаунт? <a>Войти</a></p>
+                    @include('auth.partials.logins-tabs')
+
                     <form>
                         <div class="control has-icons-left has-icons-right mb-2">
                             <input class="input" type="email" placeholder="Email">
@@ -35,6 +36,7 @@
                                 <strong>Зарегестрироваться</strong>
                             </button>
                         </div>
+                        <p class="has-text-centered mb-2">Уже есть аккаунт? <a href="{{route('login')}}">Войти</a></p>
                     </form>
                 </div>
             </div>

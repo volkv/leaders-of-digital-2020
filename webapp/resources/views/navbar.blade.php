@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ route('home') }}">
-            <img src="{{ asset('media/skfu-logo.png') }}">
+            <img src="{{ asset('media/logo-new.svg') }}">
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
            data-target="navbarBasicExample">
@@ -13,17 +13,21 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a href="{{route('students')}}" class="navbar-item {{Route::currentRouteName() == 'students' ? 'is-active':''}}">
+            <a href="{{route('students')}}"
+               class="navbar-item {{Route::currentRouteName() == 'students' ? 'is-active':''}}">
                 Студенты
             </a>
-            <a href="{{route('companies')}}" class="navbar-item {{Route::currentRouteName() == 'companies' ? 'is-active':''}}">
+            <a href="{{route('companies')}}"
+               class="navbar-item {{Route::currentRouteName() == 'companies' ? 'is-active':''}}">
                 Компании
             </a>
 
-            <a href="{{route('universities')}}" class="navbar-item {{Route::currentRouteName() == 'universities' ? 'is-active':''}}">
+            <a href="{{route('universities')}}"
+               class="navbar-item {{Route::currentRouteName() == 'universities' ? 'is-active':''}}">
                 ВУЗы
             </a>
-            <a  href="{{route('student.cabinet.index')}}" class="navbar-item {{Route::currentRouteName() == 'student.cabinet.index' ? 'is-active':''}}">
+            <a href="{{route('student.cabinet.index')}}"
+               class="navbar-item {{Route::currentRouteName() == 'student.cabinet.index' ? 'is-active':''}}">
                 ЛК студента
             </a>
             <a href="#" class="navbar-item {{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}">
@@ -37,15 +41,37 @@
         </div>
 
         <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-light" href="{{ route('register') }}">
-                        <strong>Зарегестрироваться</strong>
+            <div class="navbar-item has-dropdown is-hoverable">
+                @if(\App\Helpers\NCFU::auth())
+                    <a class="navbar-link">
+                        {{\App\Models\Student::first()->name}}
                     </a>
-                    <a class="button is-primary" href="{{ route('login') }}">
-                        Войти
-                    </a>
-                </div>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            Настройки
+                        </a>
+                        <a class="navbar-item">
+                            Вакансии
+                        </a>
+
+                        <hr class="navbar-divider">
+                        <a href="{{route('logout')}}" class="navbar-item">
+                            Выход
+                        </a>
+                    </div>
+
+                @else
+                    <div class="buttons">
+                        <a class="button is-light" href="{{ route('register') }}">
+                            <strong>Зарегестрироваться</strong>
+                        </a>
+                        <a class="button is-primary" href="{{ route('login') }}">
+                            Войти
+                        </a>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>
