@@ -31,4 +31,9 @@ class UniversityController extends Controller
         return view('university.cabinet.pages.students', compact('students')
         );
     }
+    public function cabinetDashboard ()
+    {
+        return view('university.cabinet.pages.dashboard',
+        );
+    }
 }
