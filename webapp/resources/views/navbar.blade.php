@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{ route('home') }}">
-            <img src="{{ asset('media/logo-new.svg') }}">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="{{ route('home') }}">
+            МОЙ! СТАРТ
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
            data-target="navbarBasicExample">
