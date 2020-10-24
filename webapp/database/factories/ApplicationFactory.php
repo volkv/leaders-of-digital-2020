@@ -1,0 +1,33 @@
+<?php
+
+
+namespace Database\Factories;
+
+
+use App\Models\Application;
+use App\Models\Student;
+use App\Models\Vacancy;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ApplicationFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Application::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'vacancy_id' => rand(1,Vacancy::orderByDesc('id')->first()->id),
+            'student_id' => rand(1,Student::orderByDesc('id')->first()->id),
+        ];
+    }
+}

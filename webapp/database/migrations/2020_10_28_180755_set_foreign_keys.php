@@ -27,6 +27,11 @@ class SetForeignKeys extends Migration
             $table->foreign('university_id')->references('id')->on('universities')->cascadeOnDelete();
         });
 
+        Schema::table('applications', function (Blueprint $table) {
+            $table->foreign('vacancy_id')->references('id')->on('vacancies')->cascadeOnDelete();
+            $table->foreign('student_id')->references('id')->on('students')->cascadeOnDelete();
+        });
+
 
     }
 

@@ -42,6 +42,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $university_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Application[] $applications
+ * @property-read int|null $applications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Event[] $events
  * @property-read int|null $events_count
  * @property-read mixed $profile_photo_url
@@ -107,6 +109,11 @@ class Student extends Model implements SluggableContract
     public function university()
     {
         return $this->belongsTo(University::class);
+    }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class, 'student_id','id');
     }
 
     public function getUrlAttribute()
