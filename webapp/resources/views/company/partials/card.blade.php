@@ -1,8 +1,13 @@
 <div class="box">
-    <div class="columns">
+    <div class="columns level">
         <div class="column">
-            <h3 class="has-text-weight-bold">ООО "Ромашка"</h3>
-            <p class="has-text-grey">г.Москва, ул.Пушкина, д.1</p>
+            <figure class="has-text-centered-mobile">
+                <img src="{{ $company->profile_photo_url }}">
+            </figure>
+        </div>
+        <div class="column is-two-thirds">
+            <h3 class="has-text-weight-bold">{{ $company->name }}</h3>
+            <p class="has-text-grey">{{ $company->city }}</p>
         </div>
     </div>
 </div>
