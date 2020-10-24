@@ -22,6 +22,9 @@ Route::get('/',  [HomeController::class, 'index'])->name('home');
 Route::get('/students',  [StudentController::class, 'index'])->name('students');
 Route::get('/students/{student}',  [StudentController::class, 'single'])->name('students.single');
 
+Route::get('/student-cabinet',  [StudentController::class, 'cabinet'])->name('student.cabinet.index');
+Route::get('/student-cabinet/companies',  [StudentController::class, 'cabinetCompanies'])->name('student.cabinet.companies');
+
 Route::get('/universities',  [UniversityController::class, 'index'])->name('universities');
 Route::get('/universities/{university}',  [UniversityController::class, 'single'])->name('universities.single');
 

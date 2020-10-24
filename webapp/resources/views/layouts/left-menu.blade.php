@@ -22,7 +22,7 @@
     @include('navbar')
     <div class="container section">
         <div class="columns">
-            @include('partials.menu.menu')
+            @yield('menu')
             <div class="column is-two-thirds-desktop">
                 @yield('content')
             </div>

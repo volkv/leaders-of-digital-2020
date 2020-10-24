@@ -7,13 +7,30 @@ docker-up:
 docker-down:
 	docker-compose down
 
-docker-compose-build:
+docker-build:
 	docker-compose up --build -d
 
-docker-build: docker-compose-build
+install2:
+	echo https://ncfu.test:8080
+
+install:
+	cp ./.env.example ./.env
+	cp ./webapp/.env.example ./webapp/.env
+	make docker-up
+	make composer-install
+	make npm-install
+	make npm-dev
+	make exec cmd="php artisan storage:link"
+	make exec cmd="php artisan key:generate"
+	make migrate-fresh-seed
+	sudo -- sh -c -e "echo '127.0.0.1  ncfu.test' >> /etc/hosts"
+	echo 'https://ncfu.test:8080'
 
 bash:
 	make exec cmd="bash"
+
+npm-dev:
+	make exec cmd="npm run dev"
 
 composer-update:
 	make exec cmd="composer update"

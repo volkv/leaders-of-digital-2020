@@ -25,7 +25,6 @@ class SetForeignKeys extends Migration
             $table->foreign('university_id')->references('id')->on('universities')->cascadeOnDelete();
         });
 
-
         Schema::table('event_student', function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('students')->cascadeOnDelete();
             $table->foreign('event_id')->references('id')->on('events')->cascadeOnDelete();
@@ -34,22 +33,6 @@ class SetForeignKeys extends Migration
         Schema::table('event_university', function (Blueprint $table) {
             $table->foreign('university_id')->references('id')->on('universities')->cascadeOnDelete();
             $table->foreign('event_id')->references('id')->on('events')->cascadeOnDelete();
-        });
-
-        Schema::table('student_work_area', function (Blueprint $table) {
-            $table->foreign('student_id')->references('id')->on('students')->cascadeOnDelete();
-            $table->foreign('work_area_id')->references('id')->on('work_areas')->cascadeOnDelete();
-        });
-
-
-        Schema::table('vacancy_work_area', function (Blueprint $table) {
-            $table->foreign('vacancy_id')->references('id')->on('vacancies')->cascadeOnDelete();
-            $table->foreign('work_area_id')->references('id')->on('work_areas')->cascadeOnDelete();
-        });
-
-        Schema::table('company_work_area', function (Blueprint $table) {
-            $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete();
-            $table->foreign('work_area_id')->references('id')->on('work_areas')->cascadeOnDelete();
         });
 
 

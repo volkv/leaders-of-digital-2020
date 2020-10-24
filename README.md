@@ -4,22 +4,25 @@
 _Ресурсное управление // Разработка информационного портала по поиску работы для студентов и размещения вакансий от работодателей_
 ## Live App
 **https://ncfu.volkv.com** (wip)
+## Stack
+* Laravel 8
+* MySQL 8
+* Nginx
+* Redis
+* ElasticSearch
+* VueJS / Nuxt
+
+## Технологии
+* Docker / Compose
+* Очереди Redis
+* Кэш Redis
+* Планировщик Laravel
+* Events / Notification Channels
+
 ## Webapp local init:
 ```shell
-cp ./.env.example .env
-cp ./webapp/.env.example .env
-make docker-up
-make composer-install
-make npm-install
-make npm-dev
-make bash:
-  php artisan storage:link
-  php artisan key:generate
-make migrate
-```
-
-```shell
-echo "127.0.0.1  ncfu.test" >> /etc/hosts
+git clone https://github.com/volkv/leaders-of-digital-2020.git
+make install
 ```
 
 **https://ncfu.test:8080**

@@ -125,4 +125,6 @@ class NCFU
         return $specialies[array_rand($specialies)];
     }
 
+
+
 }

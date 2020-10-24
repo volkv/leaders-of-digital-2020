@@ -13,20 +13,20 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a href="{{route('students')}}" class="navbar-item">
+            <a href="{{route('students')}}" class="navbar-item {{Route::currentRouteName() == 'students' ? 'is-active':''}}">
                 Студенты
             </a>
-            <a href="{{route('companies')}}" class="navbar-item">
+            <a href="{{route('companies')}}" class="navbar-item {{Route::currentRouteName() == 'companies' ? 'is-active':''}}">
                 Компании
             </a>
 
-            <a href="{{route('universities')}}" class="navbar-item is-disabled">
+            <a href="{{route('universities')}}" class="navbar-item {{Route::currentRouteName() == 'universities' ? 'is-active':''}}">
                 ВУЗы
             </a>
-            <a href="#" class="navbar-item">
+            <a  href="{{route('student.cabinet.index')}}" class="navbar-item {{Route::currentRouteName() == 'student.cabinet.index' ? 'is-active':''}}">
                 ЛК студента
             </a>
-            <a href="#" class="navbar-item">
+            <a href="#" class="navbar-item {{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}">
                 ЛК компании
             </a>
 
