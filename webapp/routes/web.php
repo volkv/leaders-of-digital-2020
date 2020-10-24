@@ -31,6 +31,8 @@ Route::get('/student-cabinet/settings',  [StudentController::class, 'cabinetSett
 
 Route::get('/universities',  [UniversityController::class, 'index'])->name('universities');
 Route::get('/universities/{university}',  [UniversityController::class, 'single'])->name('universities.single');
+Route::get('/university-cabinet',  [UniversityController::class, 'cabinet'])->name('university.cabinet.index');
+Route::get('/university-cabinet/students',  [UniversityController::class, 'cabinetStudents'])->name('university.cabinet.students');
 
 Route::get('/vacancies',  [VacancyController::class, 'index'])->name('vacancies');
 Route::get('/vacancies/{vacancy}',  [VacancyController::class, 'single'])->name('vacancies.single');
