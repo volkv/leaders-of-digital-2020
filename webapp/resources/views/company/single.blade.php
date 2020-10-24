@@ -73,7 +73,7 @@
         <div class="mb-2">
             <h3 class="is-size-4 has-text-centered mb-4">Вакансии</h3>
 
-                @each('vacancies.partials.card', $company->vacancies, 'vacancy')
+                @each('vacancy.partials.card', $company->vacancies, 'vacancy')
 
         </div>
     </div>

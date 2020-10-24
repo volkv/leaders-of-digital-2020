@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Student;
 use App\Models\University;
+use App\Models\Vacancy;
 
 class StudentController extends Controller
 {
     public function index () {
-        $students = Student::all();
+        $students = Student::limit(15)->get();
 
         return view('student.index', compact('students'));
     }
@@ -41,6 +42,15 @@ class StudentController extends Controller
         $student = Student::first();
 
         return view('student.cabinet.pages.settings', compact('student'));
+
+    }
+
+    public function cabinetVacancies () {
+
+       $vacancies = Vacancy::limit(3)->get();
+
+
+        return view('student.cabinet.pages.vacancies', compact('vacancies'));
 
     }
 }

@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Models\Company $company
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Event[] $events
  * @property-read int|null $events_count
+ * @property-read mixed $url
  * @property-read \App\Models\JobType $jobType
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
  * @property-read int|null $work_areas_count
@@ -52,10 +53,16 @@ class Vacancy extends Model implements SluggableContract
 
     public function getSlugField(): string
     {
-       return $this->name;
+        return $this->name;
     }
-    public function company() {
-     return   $this->belongsTo(Company::class);
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function getUrlAttribute() {
+        return route('vacancies.single', ['vacancy'=>$this->slug]);
     }
 
 }

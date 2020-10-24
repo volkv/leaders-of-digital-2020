@@ -1,7 +1,12 @@
 import axios from 'axios';
-
+import toastr from 'toastr'
 window.axios = axios;
+window.toastr = toastr
 
+window.toast =  function (e) {
+    e.preventDefault()
+    window.toastr.success(e.target.getAttribute('data-toast'));
+}
 document.addEventListener('DOMContentLoaded', function () {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -25,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+
     if (document.getElementById('login-tabs')) {
     document.getElementById('login-tabs').onclick = function(e) {
         document.querySelectorAll('[data-login]').forEach(function (el) {
@@ -36,6 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('login-as').value = e.target.getAttribute('data-login')
     };
     }
+
+    toastr.options = {
+        "positionClass": "toast-bottom-right",
+        "newestOnTop": true,
+        "progressBar": true,
+        "tapToDismiss": false,
+    }
+
+    if (window.NCFU.toastr) {
+console.log(123)
+        toastr.success(window.NCFU.toastr.message)
+    }
+
 });
 
 

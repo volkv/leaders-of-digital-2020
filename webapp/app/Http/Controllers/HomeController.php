@@ -32,7 +32,7 @@ class HomeController extends Controller
         \Session::put('logged_as', $request->input('login-as'));
 
         if (isset($mapping[$request->input('login-as')])) {
-            return redirect()->route($mapping[$request->input('login-as')]);
+            return redirect()->route($mapping[$request->input('login-as')])->with('message', 'Вы вошли как студент');
         }
 
         return redirect()->home();

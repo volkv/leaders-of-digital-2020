@@ -5,6 +5,6 @@
 
     <button class="button is-primary mb-4">Новая вакансия</button>
 
-    @include('vacancies.partials.card')
+    @include('vacancy.partials.card')
 
 @endsection

@@ -10,7 +10,7 @@ use App\Models\University;
 class UniversityController extends Controller
 {
     public function index() {
-        $universities = University::all();
+        $universities = University::limit(15)->get();
         return view('university.index', compact('universities'));
     }
 

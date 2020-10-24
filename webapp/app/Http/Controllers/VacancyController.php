@@ -9,8 +9,8 @@ use App\Models\Vacancy;
 class VacancyController
 {
     public function index() {
-        $vacancies = Vacancy::all();
-        return view('vacancies.index', compact('vacancies'));
+        $vacancies = Vacancy::limit(15)->get();
+        return view('vacancy.index', compact('vacancies'));
     }
 
     public function single(Vacancy $vacancy) {

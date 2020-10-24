@@ -1,4 +1,4 @@
-@extends('layouts.left-menu')
+@extends('layouts.app')
 
 @section('content')
     <section class="hero">
@@ -13,9 +13,8 @@
             </div>
         </div>
     </section>
-    @foreach($companies as $company)
+    @each('company.partials.card',$companies, 'company'  )
 
-            @include('company.partials.card', ['company' => $company])
 
-    @endforeach
+    @include('pagination')
 @endsection

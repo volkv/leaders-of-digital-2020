@@ -16,8 +16,9 @@ class WorkAreaController extends Controller
        $universities = $workArea->universities()->limit(3)->get();
         $companies = $workArea->companies()->limit(3)->get();
         $students = $workArea->students()->limit(3)->get();
+        $vacancies = $workArea->vacancies()->limit(3)->get();
 
-        return view('home.index', compact('students','companies','universities','vacancies'));
+        return view('workarea.single', compact('workArea','students','companies','universities','vacancies'));
     }
 
 

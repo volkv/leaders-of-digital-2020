@@ -1,6 +1,7 @@
 @import "bulma";
 @import '~@creativebulma/bulma-tagsinput/src/sass/index';
 @import '~@creativebulma/bulma-badge/src/sass/index';
+@import 'toastr';
 
 @font-face {
   src: local('ProximaNova'), url('/fonts/ProximaNova-Regular.woff2') format("woff2"),
@@ -29,4 +30,8 @@ body{
 
 .navbar-item img {
   width: 40px;
+}
+
+.navbar-item.is-active {
+  font-weight: bold;
 }
