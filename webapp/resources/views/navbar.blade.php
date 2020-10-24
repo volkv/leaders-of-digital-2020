@@ -30,7 +30,7 @@
                class="navbar-item {{Route::currentRouteName() == 'student.cabinet.index' ? 'is-active':''}}">
                 ЛК студента
             </a>
-            <a href="#" class="navbar-item {{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}">
+            <a href="{{route('company.cabinet.index')}}" class="navbar-item {{Route::currentRouteName() == 'company.cabinet.index' ? 'is-active':''}}">
                 ЛК компании
             </a>
 

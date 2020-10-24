@@ -72,9 +72,9 @@
         </div>
         <div class="mb-2">
             <h3 class="is-size-4 has-text-centered mb-4">Вакансии</h3>
-            @include('vacancies.partials.card')
-            @include('vacancies.partials.card')
-            @include('vacancies.partials.card')
+            @include('vacancies.partials.card', ['showComments' => true])
+            @include('vacancies.partials.card', ['showComments' => true])
+            @include('vacancies.partials.card', ['showComments' => true])
         </div>
     </div>
 @endsection
