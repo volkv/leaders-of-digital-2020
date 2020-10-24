@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Contracts\SluggableContract;
 use App\Traits\HasProfilePhoto;
 use App\Traits\HasSlug;
+use App\Traits\HasWorkArea;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,6 +42,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read mixed $profile_photo_url
  * @property-read \App\Models\University $university
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
+ * @property-read int|null $work_areas_count
  * @method static \Illuminate\Database\Eloquent\Builder|Student newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Student newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Student query()
@@ -76,7 +79,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model implements SluggableContract
 {
-    use HasFactory, HasSlug, HasProfilePhoto;
+    use HasFactory, HasSlug, HasProfilePhoto, HasWorkArea;
 
     protected $casts = [
         'courses' => 'array',

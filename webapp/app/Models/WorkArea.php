@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * App\Models\WorkArea
@@ -13,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $slug
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Student[] $students
+ * @property-read int|null $students_count
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|WorkArea query()
@@ -26,4 +29,10 @@ use Illuminate\Database\Eloquent\Model;
 class WorkArea extends Model
 {
     use HasFactory;
+
+    public function students()
+    {
+        return $this->morphedByMany(Student::class, 'work_areas_morph');
+    }
+
 }
