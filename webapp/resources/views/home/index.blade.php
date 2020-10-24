@@ -19,7 +19,8 @@
                     <h3 class="is-uppercase is-size-4 has-text-weight-bold has-text-primary">Выбрать</h3>
                     <p>Более <strong>1000</strong> вакансий от ведущих работодателей</p>
                     <p>Более <strong>400</strong> резюме талантливых студентов</p>
-                    <p>Здесь наши студенты находят самую <strong>важную первую работу</strong>. А работодатели получают <strong>самые перспективные</strong> кадры!</p>
+                    <p>Здесь наши студенты находят самую <strong>важную первую работу</strong>. А работодатели получают
+                        <strong>самые перспективные</strong> кадры!</p>
                 </div>
                 <div class="column is-narrow has-text-centered-mobile">
                     <figure>
@@ -28,7 +29,8 @@
                 </div>
             </div>
             <div class="columns is-multiline is-centered">
-                <a href="{{route('students')}}" class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
+                <a href="{{route('students')}}"
+                   class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
                     <div class="column is-narrow level-item">
                         <figure>
                             <img src="{{ asset('media/student-icon.png') }}" width="120" height="120">
@@ -41,7 +43,8 @@
                         </p>
                     </div>
                 </a>
-                <a href="{{route('companies')}}" class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
+                <a href="{{route('companies')}}"
+                   class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
                     <div class="column is-narrow level-item">
                         <figure>
                             <img src="{{ asset('media/manager-icon.png') }}" width="120" height="120">
@@ -54,7 +57,8 @@
                         </p>
                     </div>
                 </a>
-                <a href="{{route('vacancies')}}" class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level mb-2">
+                <a href="{{route('vacancies')}}"
+                   class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level mb-2">
                     <div class="column is-narrow level-item">
                         <figure>
                             <img src="{{ asset('media/vacancy-icon.png') }}" width="120" height="120">
@@ -79,21 +83,21 @@
             </div>
         </div>
         <div class="column">
-        <div class="column">
-            <h2 class="title has-text-centered is-size-5">Новые резюме</h2>
-            @each('student.partials.list-item', $students, 'student')
-        </div>
+            <div class="column">
+                <h2 class="title has-text-centered is-size-5">Последние вакансии</h2>
+                @each('vacancy.partials.card', $vacancies, 'vacancy')
+            </div>
 
-        <div class="column">
-            <h2 class="title has-text-centered is-size-5">Лучшие Компании</h2>
-            @each('company.partials.card', $companies, 'company')
-        </div>
+            <div class="column">
+                <h2 class="title has-text-centered is-size-5">Новые резюме</h2>
+                @each('student.partials.list-item', $students, 'student')
+            </div>
 
+            <div class="column">
+                <h2 class="title has-text-centered is-size-5">Лучшие Компании</h2>
+                @each('company.partials.card', $companies, 'company')
+            </div>
 
-        <div class="column">
-            <h2 class="title has-text-centered is-size-5">Последние вакансии</h2>
-            @each('vacancy.partials.card', $vacancies, 'vacancy')
-        </div>
         </div>
     </div>
 @endsection

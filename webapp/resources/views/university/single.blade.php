@@ -15,7 +15,7 @@
             <div class="column is-two-thirds has-text-centered-mobile">
                 <div class="columns level">
                     <div class="column">
-                        <h3 class="is-size-4">{{ $university->name }}</h3>
+                        <h3 class="is-size-4">{{ $university->name }} ({{ $university->short_name}})</h3>
                     </div>
                     <div class="column">
                         <div class="has-text-centered-desktop">

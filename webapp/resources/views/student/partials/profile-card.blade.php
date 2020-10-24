@@ -9,7 +9,7 @@
             <div class="columns level">
                 <div class="column">
                     <h3 class="is-size-4">{{$student->name}}</h3>
-                    <p class="has-text-weight-bold has-text-grey">{{$student->university->short_name}}</p>
+                    <a href="{{$student->university->url}}" class="has-text-weight-bold has-text-grey">{{$student->university->short_name}}</a>
                 </div>
                 <div class="column">
                     <div class="has-text-centered-desktop mb-2">
@@ -22,12 +22,8 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Программирование</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Дизайн</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Laravel</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">JS</span>
-                <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Vue.js</span>
+            <div class="tags">
+                @each('work-area-tag',$student->workAreas ,'workArea' )
             </div>
         </div>
     </div>

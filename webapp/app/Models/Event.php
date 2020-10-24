@@ -20,7 +20,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $slug
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Company[] $companies
+ * @property-read int|null $companies_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Student[] $students
+ * @property-read int|null $students_count
  * @property-read \App\Models\University $university
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Vacancy[] $vacancies
+ * @property-read int|null $vacancies_count
  * @method static \Illuminate\Database\Eloquent\Builder|Event newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Event newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Event query()

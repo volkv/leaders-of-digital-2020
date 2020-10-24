@@ -24,10 +24,8 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Программирование</span>
-                    <span class="tag is-primary is-medium mb-2 mt-2 mr-2">Дизайн</span>
-                    <span class="tag is-primary is-medium mb-2 mt-2 mr-2">IT</span>
+                <div class="tags">
+                    @each('work-area-tag',$company->workAreas ,'workArea' )
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
                     Вакансия {{$vacancy->name}}  @include('job-type-tag',['jobType'=>$vacancy->jobType] )
                 </h1>
                 <h2 class="subtitle">
-                    {{$vacancy->company->name}}
+                    <a href="{{$vacancy->company->url}}"> {{$vacancy->company->name}}</a>
                 </h2>
                 Город {{$vacancy->city}}
 
