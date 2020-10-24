@@ -10,7 +10,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Вакансия {{$vacancy->name}}    <span class="tag is-info is-medium mb-2 mt-2 mr-2">Трудоустройство</span>
+                    Вакансия {{$vacancy->name}}  @include('job-type-tag',['jobType'=>$vacancy->jobType] )
                 </h1>
                 <h2 class="subtitle">
                     {{$vacancy->company->name}}

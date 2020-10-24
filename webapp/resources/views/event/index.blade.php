@@ -5,15 +5,15 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Комании
+                    События
                 </h1>
                 <h2 class="subtitle">
-                    Список компаний
+                    Список событий
                 </h2>
             </div>
         </div>
     </section>
-    @each('company.partials.card',$companies, 'company'  )
+    @each('event.partials.card',$events, 'event'  )
 
     @include('pagination')
 @endsection

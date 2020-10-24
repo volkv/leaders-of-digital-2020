@@ -30,6 +30,11 @@
                 Вакансии
             </a>
 
+            <a href="{{route('events')}}"
+               class="navbar-item {{Route::currentRouteName() == 'events' ? 'is-active':''}}">
+                События
+            </a>
+
         </div>
 
         <div class="navbar-end">

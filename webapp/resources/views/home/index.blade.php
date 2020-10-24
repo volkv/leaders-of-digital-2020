@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="columns is-multiline is-centered">
-                <div class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
+                <a href="{{route('students')}}" class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
                     <div class="column is-narrow level-item">
                         <figure>
                             <img src="{{ asset('media/student-icon.png') }}" width="120" height="120">
@@ -40,8 +40,8 @@
                             студентов
                         </p>
                     </div>
-                </div>
-                <div class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
+                </a>
+                <a href="{{route('companies')}}" class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level">
                     <div class="column is-narrow level-item">
                         <figure>
                             <img src="{{ asset('media/manager-icon.png') }}" width="120" height="120">
@@ -53,8 +53,8 @@
                             работодателей
                         </p>
                     </div>
-                </div>
-                <div class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level mb-2">
+                </a>
+                <a href="{{route('vacancies')}}" class="column columns is-mobile is-narrow has-text-justified-mobile is-justify-content-center level mb-2">
                     <div class="column is-narrow level-item">
                         <figure>
                             <img src="{{ asset('media/vacancy-icon.png') }}" width="120" height="120">
@@ -66,13 +66,17 @@
                             вакансий
                         </p>
                     </div>
-                </div>
+                </a>
+
             </div>
             <div class="column">
                 <h2 class="title has-text-centered is-size-5">ТОП ВУЗы</h2>
                 @each('university.partials.list-item', $universities, 'university')
             </div>
-
+            <div class="column">
+                <h2 class="title has-text-centered is-size-5">Актуальные события</h2>
+                @each('event.partials.card', $events, 'event')
+            </div>
         </div>
         <div class="column">
         <div class="column">

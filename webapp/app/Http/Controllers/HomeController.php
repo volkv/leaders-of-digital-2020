@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Event;
 use App\Models\Student;
 use App\Models\University;
 use App\Models\Vacancy;
@@ -17,8 +18,9 @@ class HomeController extends Controller
         $companies = Company::limit(3)->get();
         $universities = University::limit(3)->get();
         $vacancies = Vacancy::limit(3)->get();
+        $events = Event::limit(3)->get();
 
-        return view('home.index', compact('students','companies','universities','vacancies'));
+        return view('home.index', compact('events','students','companies','universities','vacancies'));
     }
 
     public function login(Request $request)

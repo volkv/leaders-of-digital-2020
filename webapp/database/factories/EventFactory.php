@@ -28,6 +28,7 @@ class EventFactory extends Factory
         $event = rand(0,1) ? 'Ярмарка Вакансий' : 'Хакатон';
 
         $start = now()->addDays(rand(0,5));
+        $end = now()->addDays(rand(6,16));
 
         return [
             'name' =>$event . ' ' . $university->short_name ,
@@ -35,7 +36,7 @@ class EventFactory extends Factory
             'city' => $this->faker->city ,
             'description' => $this->faker->realText(400) ,
             'date_start' => $start ,
-            'date_end' => $start->addDays(rand(1,10)) ,
+            'date_end' => $end ,
 
         ];
     }

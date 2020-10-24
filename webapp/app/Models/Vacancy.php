@@ -24,9 +24,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $company_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Application[] $applications
+ * @property-read int|null $applications_count
  * @property-read \App\Models\Company $company
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Event[] $events
  * @property-read int|null $events_count
+ * @property-read mixed $url
  * @property-read \App\Models\JobType $jobType
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
  * @property-read int|null $work_areas_count

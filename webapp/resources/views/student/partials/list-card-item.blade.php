@@ -2,7 +2,7 @@
     /** @var \App\Models\Student $student */
 @endphp
 
-<div class="box">
+<a href="{{$student->url}}" class="box">
     <div class="columns level">
         <div class="column">
             <figure class="profile-photo">
@@ -31,4 +31,4 @@
             @include('job-type-tag', ['jobType'=>$student->jobType])
         </div>
     </div>
-</div>
+</a>

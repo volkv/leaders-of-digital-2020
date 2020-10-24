@@ -1,4 +1,3 @@
-
 @extends('student.cabinet.layout')
 
 @section('content')

@@ -13,15 +13,16 @@
             <p class="has-text-grey">{{$vacancy->company->name}}</p>
 
             <div class="is-flex">  <i class="fas fa-map-marker"></i><p>{{$vacancy->city}}</p></div>
-
+            @if(\App\Helpers\NCFU::auth() == 'student')
+                <div class="column has-text-right">
+                    <span onclick="event.preventDefault(); toastr.success('Вы откликнулись на вакансию')">Откликнуться</span>
+                </div>
+            @endif
 
         </div>
-        @if(\App\Helpers\NCFU::auth() == 'student')
-            <div class="column has-text-right">
-                <span onclick="event.preventDefault(); toastr.success('Вы откликнулись на вакансию')">Откликнуться</span>
-            </div>
-        @endif
+
     </div>
+
     @if(isset($showComments))
         <div class="ml-4 is-size-7">
             <p><strong>Мехтиев Руслан Самирович:</strong> Крутая компания, и стажировка была классной!</p>
