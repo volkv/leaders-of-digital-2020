@@ -19,15 +19,14 @@
                     </div>
                 </div>
                 <div class="columns is-multiline is-centered">
-                    @include('index.with-us')
-                    @include('index.with-us')
-                    @include('index.with-us')
+                    @include('home.partials.with-us')
+                    @include('home.partials.with-us')
+                    @include('home.partials.with-us')
                 </div>
             </div>
             <div class="column">
-                @include('partials.students.list')
-                @include('partials.students.list')
-                @include('partials.students.list')
+               <h2 class="title has-text-centered is-size-5">Новые резюме</h2>
+                @each('student.partials.list-item', $students, 'student')
             </div>
         </div>
     </div>
