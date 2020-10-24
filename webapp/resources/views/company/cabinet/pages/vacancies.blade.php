@@ -5,6 +5,6 @@
 
     <button class="button is-primary mb-4">Новая вакансия</button>
 
-    @each('vacancies.partials.card', $vacancies, 'vacancy')
+    @each('vacancy.partials.card', $vacancies, 'vacancy')
 
 @endsection
