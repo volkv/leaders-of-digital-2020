@@ -22,8 +22,9 @@ class UniversityController extends Controller
     public function cabinet () {
 
         $university = University::first();
+        $students = Student::whereUniversityId($university->id)->get();
 
-        return view('university.cabinet.pages.index', compact('university'));
+        return view('university.cabinet.pages.index', compact('students', 'university'));
 
     }
     public function cabinetStudents ()

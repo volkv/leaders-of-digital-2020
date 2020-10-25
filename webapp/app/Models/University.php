@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read mixed $profile_photo_url
  * @property-read mixed $url
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Student[] $students
+ * @property-read int|null $students_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\WorkArea[] $workAreas
  * @property-read int|null $work_areas_count
  * @method static \Illuminate\Database\Eloquent\Builder|University newModelQuery()
@@ -49,6 +51,7 @@ class University extends Model implements SluggableContract
     {
         return $this->name;
     }
+
 
     public function getUrlAttribute()
     {
