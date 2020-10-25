@@ -58,4 +58,8 @@ class Company extends Model implements SluggableContract
     {
         return  $this->hasMany(Vacancy::class);
     }
+
+    public function getUrlAttribute(){
+return route('companies.single', ['company'=>$this->slug]);
+    }
 }
