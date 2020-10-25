@@ -12,7 +12,7 @@
             <h3 class="has-text-weight-bold">{{$vacancy->name}}</h3>
             <p class="has-text-grey">{{$vacancy->company->name}}</p>
 
-            <div class="is-flex">  <i class="fas fa-map-marker"></i><p>{{$vacancy->city}}</p></div>
+     <p>{{$vacancy->city}}</p>
             @if(\App\Helpers\NCFU::auth() == 'student')
                 <div class="column has-text-right">
                     <span onclick="event.preventDefault(); toastr.success('Вы откликнулись на вакансию')">Откликнуться</span>

@@ -15,7 +15,8 @@ class UniversityController extends Controller
     }
 
     public function single(University $university) {
-        return view('university.single', compact('university'));
+        $students = Student::whereUniversityId($university->id)->get();
+        return view('university.single', compact('students','university'));
     }
 
     public function cabinet () {

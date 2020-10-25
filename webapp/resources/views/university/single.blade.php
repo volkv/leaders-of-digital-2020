@@ -63,5 +63,12 @@
                 <p class="is-light has-text-grey">средняя зарплата выпускников</p>
             </div>
         </div>
+
+
+    </div>
+    <div class="mb-2">
+        <h3 class="is-size-4 has-text-centered mb-4">Студенты</h3>
+
+        @each('student.partials.list-card-item', $students, 'student')
     </div>
 @endsection

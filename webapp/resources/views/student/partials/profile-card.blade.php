@@ -111,4 +111,13 @@
             </div>
         </div>
     </div>
+
+
+</div>
+<div class="content">
+
+    <h2>Участвует в событиях:</h2>
+
+    @each('event.partials.card',$events, 'event'  )
+
 </div>

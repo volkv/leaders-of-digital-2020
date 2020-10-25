@@ -16,7 +16,9 @@ class StudentController extends Controller
     }
     public function single (Student $student) {
 
-        return view('student.single', compact('student'));
+        $events = $student->events()->limit(3)->get();
+
+        return view('student.single', compact('events','student'));
 
     }
 

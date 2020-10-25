@@ -26,21 +26,32 @@
     </div>
 
     <div class="content">
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
 
-        <h2>Участники:</h2>
+                    <h2 class="subtitle">
+                        Участники
+                    </h2>
+
+                </div>
+            </div>
+        </section>
+
 
         <div class="content">
             <h3>Студенты</h3>
             @each('student.partials.list-card-item', $students, 'student')
         </div>
         <div class="content">
-            <h3>Вакансии</h3>
-            @each('vacancy.partials.card', $vacancies, 'vacancy')
-        </div>
-        <div class="content">
             <h3>Компании</h3>
             @each('company.partials.card',$companies, 'company'  )
         </div>
+        <div class="content">
+            <h3>Вакансии</h3>
+            @each('vacancy.partials.card', $vacancies, 'vacancy')
+        </div>
+
 
     </div>
 
