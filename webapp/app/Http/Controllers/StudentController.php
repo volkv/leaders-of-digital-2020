@@ -24,9 +24,10 @@ class StudentController extends Controller
 
     public function cabinet () {
 
-        $student = Student::first();
 
-        return view('student.cabinet.pages.index', compact('student'));
+        $student = Student::first();
+        $events = $student->events()->limit(3)->get();
+        return view('student.cabinet.pages.index', compact('events','student'));
 
     }
 
