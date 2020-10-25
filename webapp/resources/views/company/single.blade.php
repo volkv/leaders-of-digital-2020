@@ -54,16 +54,16 @@
                 </div>
                 <div class="column">
                     <div class="notification is-primary is-light">
-                        <strong class="is-size-5">1</strong>
+                        <strong class="is-size-5">2</strong>
                         <p class="has-text-weight-bold">Место</p>
-                        <p>По мнению студентов <a>СКФУ</a></p>
+                        <p>По мнению студентов <a>НИУ ВШЭ</a></p>
                     </div>
                 </div>
                 <div class="column">
-                    <div class="notification is-primary is-light">
-                        <strong class="is-size-5">1</strong>
+                    <div class="notification is-error is-light">
+                        <strong class="is-size-5">10</strong>
                         <p class="has-text-weight-bold">Место</p>
-                        <p>По мнению студентов <a>СКФУ</a></p>
+                        <p>По мнению студентов <a>МГУ</a></p>
                     </div>
                 </div>
             </div>

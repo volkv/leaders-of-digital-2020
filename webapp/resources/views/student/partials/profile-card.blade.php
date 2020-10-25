@@ -71,18 +71,8 @@
         </div>
         <div class="columns">
             <div class="column is-two-thirds">
-                <p class="has-text-weight-bold">Разработка мобильного приложения "Календарь"</p>
-                <p class="is-light has-text-grey"> 2 курс</p>
-            </div>
-            <div class="column">
-                <p class="has-text-weight-bold">5 (отлично)</p>
-                <p class="is-light has-text-grey">Оценка</p>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column is-two-thirds">
-                <p class="has-text-weight-bold">Разработка мобильного приложения "Календарь"</p>
-                <p class="is-light has-text-grey"> 2 курс</p>
+                <p class="has-text-weight-bold">Разработка ядерного реактора</p>
+                <p class="is-light has-text-grey"> 3 курс</p>
             </div>
             <div class="column">
                 <p class="has-text-weight-bold">5 (отлично)</p>
@@ -103,7 +93,7 @@
         </div>
         <div class="columns">
             <div class="column is-two-thirds">
-                <p class="has-text-weight-bold"><span></span>ООО "Ромашка Компани" <span class="tag is-info">Практика</span>
+                <p class="has-text-weight-bold"><span></span>ООО "АйТишник" <span class="tag is-info">Стажировка</span>
                 </p>
             </div>
             <div class="column">
