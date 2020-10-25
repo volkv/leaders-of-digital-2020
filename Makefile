@@ -10,9 +10,6 @@ docker-down:
 docker-build:
 	docker-compose up --build -d
 
-install2:
-	echo https://ncfu.test:8080
-
 install:
 	cp ./.env.example ./.env
 	cp ./webapp/.env.example ./webapp/.env
