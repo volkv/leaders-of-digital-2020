@@ -38,3 +38,6 @@ make install
 ```
 
 **https://ncfu.test:8080**
+
+## Лицензция
+[GNU GENERAL PUBLIC LICENSE Version 3](https://github.com/volkv/leaders-of-digital-2020/blob/main/LICENSE)
